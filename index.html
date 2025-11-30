@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VibeCraft AI Music — Jamaica Edition</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>VibeCraft AI Music Store — Jamaica Edition</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Premium AI-Generated Caribbean Beats • Reggae • Dancehall • Afrobeats • Electronic">
+    <meta name="keywords" content="AI music, Caribbean beats, reggae, dancehall, afrobeats, electronic music, royalty-free beats">
+    <meta name="author" content="VibeCraft AI">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="VibeCraft AI Music — Jamaica Edition">
+    <meta property="og:description" content="Premium AI-Generated Caribbean Beats">
+    <meta property="og:image" content="https://your-domain.com/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%2300A94F'/><circle cx='50' cy='50' r='35' fill='%23F6B600'/><circle cx='50' cy='50' r='25' fill='%23111'/></svg>">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -29,15 +46,7 @@
             }
         }
     </script>
-    <!-- Google Analytics - Replace GA_MEASUREMENT_ID with your actual GA4 ID -->
-    <!-- To disable analytics, replace GA_MEASUREMENT_ID with a dummy value or remove this section -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
+    
     <style>
         * { box-sizing: border-box; }
         body {
@@ -74,7 +83,7 @@
             100% { transform: translateY(-100px) scaleY(1.5); opacity: 0; }
         }
 
-        /* Neon Circuitry Traces */
+        /* Circuit Lines */
         .circuit-line {
             position: absolute;
             background: linear-gradient(90deg, transparent, #00CED1, transparent);
@@ -111,16 +120,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Floating Vinyl */
-        .floating-vinyl {
-            animation: floatVinyl 6s ease-in-out infinite;
-        }
-
-        @keyframes floatVinyl {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
+        /* Vinyl Animation */
         .vinyl-spin {
             animation: spinVinyl 4s linear infinite;
         }
@@ -128,6 +128,15 @@
         @keyframes spinVinyl {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
+        }
+
+        .floating-vinyl {
+            animation: floatVinyl 6s ease-in-out infinite;
+        }
+
+        @keyframes floatVinyl {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
 
         /* Hologram Effect */
@@ -187,7 +196,7 @@
             50% { height: 100%; }
         }
 
-        /* 3D Parallax Cards */
+        /* 3D Parallax */
         .parallax-card {
             transform-style: preserve-3d;
             transition: transform 0.3s ease;
@@ -238,7 +247,7 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 60px rgba(0,169,79,0.2);
         }
 
-        /* Audio Player Custom */
+        /* Audio Player Styling */
         audio::-webkit-media-controls-panel {
             background: linear-gradient(135deg, #1a1a1f, #0a0a0d);
         }
@@ -299,6 +308,31 @@
             box-shadow: 0 20px 60px rgba(0,169,79,0.3), 0 0 30px rgba(246,182,0,0.2);
         }
 
+        /* Loading Animation */
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(0,169,79,0.3);
+            border-top: 4px solid #00A94F;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Fade In */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* Mobile Optimizations */
         @media (max-width: 768px) {
             .floating-player {
@@ -312,147 +346,22 @@
             }
         }
 
-        /* Fade In Animation */
-        .fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-            opacity: 0;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Pulse Ring */
-        .pulse-ring {
-            animation: pulseRing 2s infinite;
-        }
-
-        @keyframes pulseRing {
-            0% { box-shadow: 0 0 0 0 rgba(0,169,79,0.7); }
-            70% { box-shadow: 0 0 0 20px rgba(0,169,79,0); }
-            100% { box-shadow: 0 0 0 0 rgba(0,169,79,0); }
-        }
-
-        /* Drag and Drop Styles */
-        .drop-zone {
-            border: 2px dashed rgba(0,206,209,0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .drop-zone.drag-over {
-            border-color: #00CED1;
-            background: rgba(0,206,209,0.05);
-            box-shadow: 0 0 20px rgba(0,206,209,0.3);
-        }
-
-        .drop-zone::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0,206,209,0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .drop-zone.drag-over::before {
-            left: 100%;
-        }
-
-        .drop-zone input[type="file"] {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        .drop-content {
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        /* Admin Panel */
-        .admin-panel {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 400px;
-            height: 100vh;
-            background: rgba(10,10,13,0.98);
-            backdrop-filter: blur(20px);
-            border-left: 1px solid rgba(0,169,79,0.3);
-            transition: right 0.3s ease;
-            z-index: 1000;
-            overflow-y: auto;
-        }
-
-        .admin-panel.open {
-            right: 0;
-        }
-
-        .admin-toggle {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            z-index: 1001;
-            background: rgba(0,169,79,0.2);
-            border: 1px solid rgba(0,169,79,0.5);
-            backdrop-filter: blur(10px);
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .admin-toggle:hover {
-            background: rgba(0,169,79,0.3);
-            border-color: #00A94F;
-            transform: scale(1.1);
-        }
-
-        .track-editor {
-            background: rgba(16,16,21,0.5);
-            border: 1px solid rgba(0,206,209,0.2);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .save-all-btn {
-            background: linear-gradient(135deg, #00A94F, #F6B600);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-
-        .save-all-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,169,79,0.3);
-        }
-
-        /* Mobile Admin Panel */
-        @media (max-width: 768px) {
-            .admin-panel {
-                width: 100vw;
-                right: -100vw;
-            }
+        /* Focus Styles */
+        .focus-visible {
+            outline: 2px solid #00A94F;
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body class="text-white min-h-screen">
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-dark/90 backdrop-blur-sm z-50 flex items-center justify-center">
+        <div class="flex flex-col items-center gap-4">
+            <div class="loading-spinner"></div>
+            <p class="text-jamaica-green font-rajdhani text-lg">Loading your beats...</p>
+        </div>
+    </div>
+
     <!-- Animated Background Particles -->
     <div class="particles-container" id="particles"></div>
 
@@ -463,28 +372,41 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-xl border-b border-jamaica-green/20">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-jamaica-green via-jamaica-gold to-jamaica-black flex items-center justify-center vinyl-spin">
-                    <div class="w-3 h-3 rounded-full bg-dark"></div>
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-jamaica-green via-jamaica-gold to-jamaica-black flex items-center justify-center vinyl-spin">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                        <circle cx="12" cy="12" r="3" stroke-width="1" fill="#F6B600"/>
+                        <path stroke-width="1" d="M12 2v20M2 12h20"/>
+                    </svg>
                 </div>
-                <h1 class="font-orbitron text-xl md:text-2xl font-bold">
-                    <span class="text-jamaica-green">VibeCraft</span>
-                    <span class="text-jamaica-gold">AI</span>
-                </h1>
+                <div>
+                    <h1 class="font-orbitron text-xl md:text-2xl font-bold">
+                        <span class="text-jamaica-green">VibeCraft</span>
+                        <span class="text-jamaica-gold">AI</span>
+                    </h1>
+                    <p class="text-xs text-gray-500">Jamaica Edition</p>
+                </div>
             </div>
-            <nav class="hidden md:flex items-center gap-6 font-rajdhani text-sm uppercase tracking-wider">
+            
+            <nav class="hidden md:flex items-center gap-6 font-rajdhani text-sm uppercase tracking-wider" role="navigation" aria-label="Main navigation">
                 <a href="#home" class="hover:text-jamaica-gold transition-colors">Home</a>
                 <a href="#tracks" class="hover:text-jamaica-gold transition-colors">Tracks</a>
                 <a href="#bundles" class="hover:text-jamaica-gold transition-colors">Bundles</a>
                 <a href="#about" class="hover:text-jamaica-gold transition-colors">About</a>
             </nav>
+            
             <div class="flex items-center gap-3">
                 <div class="relative hidden md:block">
                     <input type="text" id="searchInput" placeholder="Search tracks..." 
-                        class="bg-darker border border-jamaica-green/30 rounded-full px-4 py-2 pl-10 text-sm focus:outline-none focus:border-jamaica-gold w-48 transition-all focus:w-64">
+                        class="bg-darker border border-jamaica-green/30 rounded-full px-4 py-2 pl-10 text-sm focus:outline-none focus:border-jamaica-gold w-48 transition-all focus:w-64"
+                        aria-label="Search tracks">
                     <span class="absolute left-3 top-2.5 text-jamaica-green">🔍</span>
                 </div>
-                <button id="cartBtn" class="hologram-btn px-4 py-2 rounded-full font-rajdhani text-sm flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 1.5M7 13l1.5 1.5M9 3h6m-6 0h6m2 3v12a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2z"></path></svg>
+                
+                <button id="cartBtn" class="hologram-btn px-4 py-2 rounded-full font-rajdhani text-sm flex items-center gap-2" aria-label="Shopping cart">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 1.5M7 13l1.5 1.5M9 3h6m-6 0h6m2 3v12a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2z"/>
+                    </svg>
                     <span id="cartCount" class="text-jamaica-gold">0</span>
                 </button>
             </div>
@@ -512,6 +434,7 @@
                 </defs>
             </svg>
         </div>
+        
         <div class="absolute bottom-40 right-20 floating-vinyl opacity-20" style="animation-delay: -3s;">
             <svg width="80" height="80" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="48" fill="none" stroke="url(#vinylGrad)" stroke-width="2"/>
@@ -527,21 +450,25 @@
                     <span class="text-turquoise text-3xl md:text-5xl">JAMAICA EDITION</span>
                 </h2>
             </div>
-            <p id="heroDescription" class="text-xl md:text-2xl text-gray-400 mb-8 font-rajdhani max-w-2xl mx-auto">
+            <p class="text-xl md:text-2xl text-gray-400 mb-8 font-rajdhani max-w-2xl mx-auto">
                 Premium AI-Generated Beats • Reggae • Dancehall • Afrobeats • Electronic
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <button onclick="scrollTo('tracks')" class="hologram-btn px-8 py-4 rounded-full font-orbitron text-jamaica-gold hover:text-white transition-colors pulse-ring flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm8-14v6a2 2 0 002 2h2M9 19l3-3m0 0l3 3m-3-3v12"></path></svg>
+                <button onclick="scrollToSection('tracks')" class="hologram-btn px-8 py-4 rounded-full font-orbitron text-jamaica-gold hover:text-white transition-colors flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm8-14v6a2 2 0 002 2h2M9 19l3-3m0 0l3 3m-3-3v12"/>
+                    </svg>
                     EXPLORE TRACKS
                 </button>
-                <button onclick="scrollTo('bundles')" class="hologram-btn px-8 py-4 rounded-full font-orbitron text-jamaica-green hover:text-white transition-colors flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                <button onclick="scrollToSection('bundles')" class="hologram-btn px-8 py-4 rounded-full font-orbitron text-jamaica-green hover:text-white transition-colors flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                    </svg>
                     VIEW BUNDLES
                 </button>
             </div>
             
-            <!-- Jamaica Flag Animation -->
+            <!-- Jamaica Flag -->
             <div class="mt-16 flex justify-center gap-2">
                 <div class="w-16 h-10 bg-jamaica-green rounded-sm animate-pulse"></div>
                 <div class="w-16 h-10 bg-jamaica-gold rounded-sm animate-pulse" style="animation-delay: 0.2s;"></div>
@@ -567,12 +494,16 @@
             <p class="text-gray-500 text-center mb-12 font-rajdhani text-lg">AI-Generated Premium Beats</p>
             
             <!-- Genre Filters -->
-            <div id="genreFilters" class="flex flex-wrap justify-center gap-3 mb-12">
-                <!-- populated by JS -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12" id="genreFilters">
+                <button class="genre-btn active hologram-btn px-5 py-2 rounded-full text-sm font-rajdhani" data-genre="all">All</button>
+                <button class="genre-btn hologram-btn px-5 py-2 rounded-full text-sm font-rajdhani" data-genre="reggae">Reggae</button>
+                <button class="genre-btn hologram-btn px-5 py-2 rounded-full text-sm font-rajdhani" data-genre="dancehall">Dancehall</button>
+                <button class="genre-btn hologram-btn px-5 py-2 rounded-full text-sm font-rajdhani" data-genre="afrobeats">Afrobeats</button>
+                <button class="genre-btn hologram-btn px-5 py-2 rounded-full text-sm font-rajdhani" data-genre="electronic">Electronic</button>
             </div>
 
             <div id="tracksGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Tracks populated by JS -->
+                <!-- Tracks will be populated by JavaScript -->
             </div>
         </div>
     </section>
@@ -587,7 +518,7 @@
             <p class="text-gray-500 text-center mb-12 font-rajdhani text-lg">Save More with Curated Collections</p>
             
             <div id="bundlesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Bundles populated by JS -->
+                <!-- Bundles will be populated by JavaScript -->
             </div>
         </div>
     </section>
@@ -596,8 +527,8 @@
     <section id="about" class="py-20 relative">
         <div class="holo-lines opacity-30"></div>
         <div class="container mx-auto px-4 max-w-4xl relative z-10">
-            <h2 class="font-orbitron text-4xl md:text-5xl text-center mb-12" id="aboutTitle">
-                <!-- Dynamic content applied by JS -->
+            <h2 class="font-orbitron text-4xl md:text-5xl text-center mb-12">
+                <span class="text-jamaica-green">ABOUT</span> <span class="text-jamaica-gold">VibeCraft AI</span>
             </h2>
             
             <div class="parallax-card bg-darker/80 border border-jamaica-green/20 rounded-2xl p-8 md:p-12 backdrop-blur-xl">
@@ -608,21 +539,28 @@
                         </div>
                     </div>
                     <div>
-                        <h3 class="font-orbitron text-2xl text-jamaica-gold mb-4" id="aboutSubtitle">
-                            <!-- Dynamic content applied by JS -->
-                        </h3>
-                        <p class="text-gray-400 font-rajdhani text-lg mb-4" id="aboutDesc1">
-                            <!-- Dynamic content applied by JS -->
+                        <h3 class="font-orbitron text-2xl text-jamaica-gold mb-4">The Future of Caribbean Sound</h3>
+                        <p class="text-gray-400 font-rajdhani text-lg mb-4">
+                            VibeCraft AI Music Store brings you the cutting edge of AI-generated Caribbean music. 
+                            From deep Reggae roots to modern Dancehall vibes, our tracks are crafted using 
+                            advanced neural networks trained on decades of Caribbean musical heritage.
                         </p>
-                        <p class="text-gray-400 font-rajdhani text-lg" id="aboutDesc2">
-                            <!-- Dynamic content applied by JS -->
+                        <p class="text-gray-400 font-rajdhani text-lg">
+                            Each track is royalty-free and ready for your next project — films, games, 
+                            podcasts, or personal enjoyment. Experience the future of island sound.
                         </p>
                         <div class="flex gap-4 mt-6">
-                            <a id="whatsappLink" href="#" class="hologram-btn px-6 py-3 rounded-full text-sm font-rajdhani flex items-center gap-2">
-                                <span>💬</span> WhatsApp Us
+                            <a href="https://wa.me/1234567890" class="hologram-btn px-6 py-3 rounded-full text-sm font-rajdhani flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                </svg>
+                                WhatsApp Us
                             </a>
-                            <a id="emailLink" href="#" class="hologram-btn px-6 py-3 rounded-full text-sm font-rajdhani flex items-center gap-2">
-                                <span>📧</span> Email
+                            <a href="mailto:contact@VibeCraftai.music" class="hologram-btn px-6 py-3 rounded-full text-sm font-rajdhani flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                Email
                             </a>
                         </div>
                     </div>
@@ -635,7 +573,9 @@
     <div id="floatingPlayer" class="floating-player hidden">
         <div class="flex items-center gap-3">
             <div id="playerArt" class="w-12 h-12 rounded-lg bg-gradient-to-br from-jamaica-green to-jamaica-gold flex items-center justify-center">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm8-14v6a2 2 0 002 2h2M9 19l3-3m0 0l3 3m-3-3v12"></path></svg>
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm8-14v6a2 2 0 002 2h2M9 19l3-3m0 0l3 3m-3-3v12"/>
+                </svg>
             </div>
             <div class="hidden sm:block">
                 <p id="playerTitle" class="font-rajdhani text-sm text-white truncate max-w-[150px]">No track selected</p>
@@ -644,27 +584,30 @@
         </div>
         <audio id="mainPlayer" class="w-32 sm:w-48"></audio>
         <div class="flex items-center gap-2">
-            <button id="playPauseBtn" class="w-10 h-10 rounded-full bg-jamaica-gold text-dark flex items-center justify-center hover:bg-jamaica-green transition-colors">
+            <button id="playPauseBtn" class="w-10 h-10 rounded-full bg-jamaica-gold text-dark flex items-center justify-center hover:bg-jamaica-green transition-colors" aria-label="Play/Pause">
                 <span id="playIcon">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.665z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.665z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
                 </span>
             </button>
-            <input type="range" id="volumeSlider" min="0" max="100" value="80" class="w-16 hidden sm:block accent-jamaica-gold">
+            <input type="range" id="volumeSlider" min="0" max="100" value="80" class="w-16 hidden sm:block accent-jamaica-gold" aria-label="Volume">
         </div>
-        <button id="closePlayer" class="text-gray-500 hover:text-white ml-2">✕</button>
+        <button id="closePlayer" class="text-gray-500 hover:text-white ml-2" aria-label="Close player">✕</button>
     </div>
 
     <!-- Cart Modal -->
-    <div id="cartModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div id="cartModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4" role="dialog" aria-labelledby="cartTitle">
         <div class="bg-darker border border-jamaica-green/30 rounded-2xl max-w-lg w-full max-h-[80vh] overflow-auto">
             <div class="p-6 border-b border-jamaica-green/20">
                 <div class="flex justify-between items-center">
-                    <h3 class="font-orbitron text-2xl text-jamaica-gold">Your Cart</h3>
-                    <button id="closeCartModal" class="text-gray-500 hover:text-white text-2xl">✕</button>
+                    <h3 id="cartTitle" class="font-orbitron text-2xl text-jamaica-gold">Your Cart</h3>
+                    <button id="closeCartModal" class="text-gray-500 hover:text-white text-2xl" aria-label="Close cart">✕</button>
                 </div>
             </div>
             <div id="cartItems" class="p-6 space-y-4">
-                <!-- Cart items here -->
+                <!-- Cart items will be populated by JavaScript -->
             </div>
             <div class="p-6 border-t border-jamaica-green/20">
                 <div class="flex justify-between mb-4">
@@ -673,19 +616,27 @@
                 </div>
                 <div class="space-y-3">
                     <a id="stripeCheckout" href="#" class="hologram-btn block text-center px-6 py-4 rounded-xl font-rajdhani text-lg flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                        </svg>
                         Pay with Stripe
                     </a>
                     <a id="gumroadCheckout" href="https://gumroad.com/l/yourstoreid" target="_blank" class="hologram-btn block text-center px-6 py-4 rounded-xl font-rajdhani text-lg flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 1.5M7 13l1.5 1.5M9 3h6m-6 0h6m2 3v12a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2z"></path></svg>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 1.5M7 13l1.5 1.5M9 3h6m-6 0h6m2 3v12a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2z"/>
+                        </svg>
                         Buy on Gumroad
                     </a>
                     <a id="whatsappCheckout" href="#" class="hologram-btn block text-center px-6 py-4 rounded-xl font-rajdhani text-lg bg-green-600/20 border-green-500/50 flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
                         Order via WhatsApp
                     </a>
                     <a id="emailCheckout" href="#" class="hologram-btn block text-center px-6 py-4 rounded-xl font-rajdhani text-lg flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
                         Order via Email
                     </a>
                 </div>
@@ -694,127 +645,84 @@
     </div>
 
     <!-- Admin Panel Toggle -->
-    <div class="admin-toggle" onclick="showAdminLogin()" title="Content Manager">
-        <svg class="w-6 h-6 text-jamaica-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+    <button id="adminToggle" class="fixed top-24 right-6 z-40 w-16 h-16 rounded-full bg-jamaica-green/20 border-2 border-jamaica-green/50 backdrop-blur-xl flex items-center justify-center cursor-pointer transition-all hover:scale-110 hover:bg-jamaica-green/30 hover:border-jamaica-green focus:outline-none focus:ring-2 focus:ring-jamaica-green" title="Content Manager" aria-label="Open content manager">
+        <svg class="w-8 h-8 text-jamaica-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
         </svg>
-    </div>
+    </button>
 
     <!-- Admin Panel -->
-    <div class="admin-panel" id="adminPanel">
+    <div id="adminPanel" class="fixed top-0 right-0 w-full lg:w-96 h-full bg-darker/98 backdrop-blur-xl border-l border-jamaica-green/30 transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
         <div class="p-6">
-            <div class="flex justify-between items-center mb-6">
+            <div class="flex justify-between items-center mb-8">
                 <h2 class="font-orbitron text-2xl text-jamaica-gold">Content Manager</h2>
-                <button onclick="toggleAdminPanel()" class="text-gray-500 hover:text-white">
+                <button id="closeAdminPanel" class="text-gray-500 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-jamaica-green rounded p-1" aria-label="Close admin panel">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>
             </div>
             
-            <div class="mb-6">
-                <p class="text-gray-400 text-sm mb-4">
-                    Upload your music files and artwork using drag & drop. Changes are saved automatically.
-                </p>
-                <p class="text-gray-500 text-xs">
-                    Note: For reliability across browsers (including Edge), uploads are stored in IndexedDB (not localStorage).
+            <div class="mb-8 p-4 bg-jamaica-green/10 rounded-xl border border-jamaica-green/20">
+                <h3 class="font-semibold text-jamaica-green mb-2">💡 Quick Start</h3>
+                <p class="text-sm text-gray-300">
+                    Upload music files and artwork using drag & drop. Changes are saved automatically to your browser.
                 </p>
             </div>
 
             <!-- Genre Management -->
-            <div class="track-editor mb-6">
-                <h3 class="font-orbitron text-lg text-jamaica-gold mb-4">Genre Management</h3>
+            <div class="admin-section mb-8">
+                <h3 class="font-orbitron text-lg text-jamaica-green mb-4">Genre Management</h3>
                 <div class="space-y-4">
                     <div class="flex gap-2">
-                        <input type="text" id="newGenreInput" placeholder="Add new genre..."
-                               class="flex-1 bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
-                        <button onclick="addGenre()" class="hologram-btn px-4 py-2 rounded-lg text-sm font-rajdhani">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        <input type="text" id="newGenreInput" placeholder="Add new genre..." 
+                               class="flex-1 bg-darker/50 border border-jamaica-green/30 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-jamaica-gold transition-colors"
+                               aria-label="New genre name">
+                        <button onclick="addGenre()" class="hologram-btn px-4 py-3 rounded-lg font-medium hover:scale-105 transition-transform" aria-label="Add genre">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
                             </svg>
                         </button>
                     </div>
                     <div id="genresList" class="space-y-2">
-                        <!-- Genres populated by JS -->
+                        <!-- Genres populated by JavaScript -->
                     </div>
                 </div>
             </div>
 
             <!-- Page Content Editor -->
-            <div class="track-editor mb-6">
-                <h3 class="font-orbitron text-lg text-jamaica-gold mb-4">Page Content Editor</h3>
-                <div class="space-y-4">
-                    <!-- Hero Section -->
-                    <div class="bg-darker/50 p-4 rounded-lg">
-                        <h4 class="text-jamaica-green font-semibold mb-3">Hero Section</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="admin-section mb-8">
+                <h3 class="font-orbitron text-lg text-jamaica-green mb-4">Page Content</h3>
+                <div class="space-y-6">
+                    <div class="bg-darker/50 p-4 rounded-xl">
+                        <h4 class="text-jamaica-gold font-semibold mb-4">Hero Section</h4>
+                        <div class="grid grid-cols-1 gap-4">
                             <div>
-                                <label class="block text-sm text-gray-400 mb-2">Main Title (e.g., VibeCraft)</label>
-                                <input type="text" id="heroMainTitle" value="" onchange="updatePageContent('heroMainTitle', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                                <label class="block text-sm text-gray-400 mb-2">Main Title</label>
+                                <input type="text" id="heroMainTitle" class="w-full bg-darker/50 border border-jamaica-green/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-jamaica-gold transition-colors">
                             </div>
                             <div>
-                                <label class="block text-sm text-gray-400 mb-2">Subtitle (e.g., AI MUSIC)</label>
-                                <input type="text" id="heroSubtitle" value="" onchange="updatePageContent('heroSubtitle', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                                <label class="block text-sm text-gray-400 mb-2">Subtitle</label>
+                                <input type="text" id="heroSubtitle" class="w-full bg-darker/50 border border-jamaica-green/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-jamaica-gold transition-colors">
                             </div>
-                            <div class="md:col-span-2">
+                            <div>
                                 <label class="block text-sm text-gray-400 mb-2">Description</label>
-                                <textarea id="heroDescription" rows="3" onchange="updatePageContent('heroDescription', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold"></textarea>
+                                <textarea id="heroDescription" rows="3" class="w-full bg-darker/50 border border-jamaica-green/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-jamaica-gold transition-colors"></textarea>
                             </div>
                         </div>
                     </div>
-
-                    <!-- About Section -->
-                    <div class="bg-darker/50 p-4 rounded-lg">
-                        <h4 class="text-jamaica-green font-semibold mb-3">About Section</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    
+                    <div class="bg-darker/50 p-4 rounded-xl">
+                        <h4 class="text-jamaica-gold font-semibold mb-4">Contact Info</h4>
+                        <div class="grid grid-cols-1 gap-4">
                             <div>
-                                <label class="block text-sm text-gray-400 mb-2">About Title</label>
-                                <input type="text" id="aboutTitleInput" value="" onchange="updatePageContent('aboutTitle', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
-                            </div>
-                            <div>
-                                <label class="block text-sm text-gray-400 mb-2">About Subtitle</label>
-                                <input type="text" id="aboutSubtitleInput" value="" onchange="updatePageContent('aboutSubtitle', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
-                            </div>
-                            <div class="md:col-span-2">
-                                <label class="block text-sm text-gray-400 mb-2">Description 1</label>
-                                <textarea id="aboutDesc1Input" rows="2" onchange="updatePageContent('aboutDesc1', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold"></textarea>
-                            </div>
-                            <div class="md:col-span-2">
-                                <label class="block text-sm text-gray-400 mb-2">Description 2</label>
-                                <textarea id="aboutDesc2Input" rows="2" onchange="updatePageContent('aboutDesc2', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold"></textarea>
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-sm text-gray-400 mb-2">WhatsApp Number (e.g., 1234567890)</label>
-                                    <input type="text" id="whatsappNumberInput" value="" onchange="updatePageContent('whatsappNumber', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
-                                </div>
-                                <div>
-                                    <label class="block text-sm text-gray-400 mb-2">Contact Email</label>
-                                    <input type="text" id="contactEmailInput" value="" onchange="updatePageContent('contactEmail', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Footer Section -->
-                    <div class="bg-darker/50 p-4 rounded-lg">
-                        <h4 class="text-jamaica-green font-semibold mb-3">Footer</h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm text-gray-400 mb-2">Copyright Text</label>
-                                <input type="text" id="footerCopyrightInput" value="" onchange="updatePageContent('footerCopyright', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                                <label class="block text-sm text-gray-400 mb-2">WhatsApp Number</label>
+                                <input type="tel" id="whatsappNumber" class="w-full bg-darker/50 border border-jamaica-green/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-jamaica-gold transition-colors" placeholder="1234567890">
                             </div>
                             <div>
-                                <label class="block text-sm text-gray-400 mb-2">Terms Link Text</label>
-                                <input type="text" id="termsTextInput" value="" onchange="updatePageContent('termsText', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
-                            </div>
-                            <div>
-                                <label class="block text-sm text-gray-400 mb-2">Privacy Link Text</label>
-                                <input type="text" id="privacyTextInput" value="" onchange="updatePageContent('privacyText', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
-                            </div>
-                            <div>
-                                <label class="block text-sm text-gray-400 mb-2">Licensing Link Text</label>
-                                <input type="text" id="licensingTextInput" value="" onchange="updatePageContent('licensingText', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                                <label class="block text-sm text-gray-400 mb-2">Contact Email</label>
+                                <input type="email" id="contactEmail" class="w-full bg-darker/50 border border-jamaica-green/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-jamaica-gold transition-colors" placeholder="contact@VibeCraftai.music">
                             </div>
                         </div>
                     </div>
@@ -822,31 +730,24 @@
             </div>
 
             <!-- Track Editors -->
-            <div id="trackEditors" class="space-y-4">
-                <!-- Track editors populated by JS -->
+            <div id="trackEditors" class="space-y-6">
+                <!-- Track editors populated by JavaScript -->
             </div>
 
-            <button onclick="addNewTrack()" class="hologram-btn mt-4 px-4 py-2 rounded-lg text-sm font-rajdhani bg-jamaica-gold/20 border-jamaica-gold/50 flex items-center gap-2 justify-center">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                </svg>
-                Add New Track
-            </button>
+            <div class="mt-8 space-y-4">
+                <button onclick="addNewTrack()" class="hologram-btn w-full px-6 py-4 rounded-xl font-semibold bg-jamaica-gold/20 border-jamaica-gold/50 flex items-center justify-center gap-3 hover:scale-105 transition-transform">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                    </svg>
+                    Add New Track
+                </button>
 
-            <button onclick="saveAllChanges()" class="save-all-btn mt-6">
-                <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3-3m0 0l-3 3m3-3v12"></path>
-                </svg>
-                Save All Changes
-            </button>
-
-            <div class="mt-6 p-4 bg-darker/50 rounded-lg border border-jamaica-green/20">
-                <h3 class="font-rajdhani text-jamaica-green font-semibold mb-2">💡 Quick Tips:</h3>
-                <ul class="text-sm text-gray-400 space-y-1">
-                    <li>• Drag & drop files directly onto a track’s artwork/audio area</li>
-                    <li>• Ctrl+S saves + closes this panel</li>
-                    <li>• Ctrl+N adds a new track</li>
-                </ul>
+                <button onclick="saveAllChanges()" class="save-all-btn w-full px-6 py-4 rounded-xl font-bold text-dark bg-gradient-to-r from-jamaica-green to-jamaica-gold hover:from-jamaica-gold hover:to-jamaica-green transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-jamaica-green">
+                    <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3-3m0 0l-3 3m3-3v12"/>
+                    </svg>
+                    Save All Changes
+                </button>
             </div>
         </div>
     </div>
@@ -857,22 +758,21 @@
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-full bg-gradient-to-br from-jamaica-green via-jamaica-gold to-jamaica-black flex items-center justify-center vinyl-spin">
-                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="3" stroke-width="1" fill="#F6B600"/>
+                            <path stroke-width="1" d="M12 2v20M2 12h20"/>
+                        </svg>
                     </div>
-                    <span class="font-orbitron text-xl" id="footerBrand">
-                        <!-- Dynamic content applied by JS -->
+                    <span class="font-orbitron text-xl">
+                        <span class="text-jamaica-green">VibeCraft</span>
+                        <span class="text-jamaica-gold">AI</span>
                     </span>
                 </div>
                 <div class="flex gap-6 text-gray-500">
-                    <a id="termsLink" href="#" class="hover:text-jamaica-gold transition-colors">
-                        <!-- Dynamic content applied by JS -->
-                    </a>
-                    <a id="privacyLink" href="#" class="hover:text-jamaica-gold transition-colors">
-                        <!-- Dynamic content applied by JS -->
-                    </a>
-                    <a id="licensingLink" href="#" class="hover:text-jamaica-gold transition-colors">
-                        <!-- Dynamic content applied by JS -->
-                    </a>
+                    <a href="#" class="hover:text-jamaica-gold transition-colors">Terms</a>
+                    <a href="#" class="hover:text-jamaica-gold transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-jamaica-gold transition-colors">Licensing</a>
                 </div>
                 <div class="flex gap-4">
                     <div class="w-6 h-4 bg-jamaica-green rounded-sm"></div>
@@ -880,594 +780,166 @@
                     <div class="w-6 h-4 bg-jamaica-black border border-gray-700 rounded-sm"></div>
                 </div>
             </div>
-            <p class="text-center text-gray-600 mt-8 font-rajdhani" id="footerCopyright">
-                <!-- Dynamic content applied by JS -->
+            <p class="text-center text-gray-600 mt-8 font-rajdhani">
+                © 2024 VibeCraft AI Music Store — Jamaica Edition. All rights reserved.
             </p>
         </div>
     </footer>
 
     <script>
         // ==========================================================
-        // STORAGE + DATA MODEL
+        // DATA MANAGEMENT
         // ==========================================================
-        // Why Edge was failing:
-        // - localStorage is typically ~5MB. Storing audio as base64 quickly exceeds quota,
-        //   causing Save All to fail and data to disappear on refresh.
-        // Fix:
-        // - Store *metadata* (tracks/bundles/genres) in localStorage (small)
-        // - Store *files* (artwork/audio blobs) in IndexedDB (large + Edge compatible)
+        
+        // Storage keys
+        const STORAGE_KEYS = {
+            MUSIC_DATA: 'rastavaveMusicData',
+            CART: 'rastavaveCart',
+            ADMIN_PASSWORD: 'rastavaveAdminPassword',
+            PAGE_CONTENT: 'rastavavePageContent'
+        };
 
-        const META_KEY = 'VibeCraftMusicMeta_v2';
-        const LEGACY_KEY = 'VibeCraftMusicData';
-        const CART_KEY = 'VibeCraftCart';
-        const ADMIN_PASSWORD_KEY = 'VibeCraftAdminPassword';
-
-        const FILE_DB_NAME = 'VibeCraftMusicFiles';
-        const FILE_DB_VERSION = 1;
-        const FILE_STORE = 'files';
-
+        // Default data
         const DEFAULT_GENRES = ['reggae', 'dancehall', 'afrobeats', 'electronic'];
-
+        
         const DEFAULT_TRACKS = [
-            { id: 1, title: 'Roots Revival', genre: 'reggae', price: 4.99, bpm: 78, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', artwork: 'music-note', color: 'from-jamaica-green to-emerald-800' },
-            { id: 2, title: 'Kingston Nights', genre: 'dancehall', price: 5.99, bpm: 95, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3', artwork: 'speaker-wave', color: 'from-jamaica-gold to-amber-700' },
-            { id: 3, title: 'Digital Jah', genre: 'electronic', price: 3.99, bpm: 128, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3', artwork: 'bolt', color: 'from-turquoise to-cyan-800' },
-            { id: 4, title: 'Lagos to Kingston', genre: 'afrobeats', price: 5.49, bpm: 105, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3', artwork: 'globe-alt', color: 'from-orange-500 to-red-700' },
-            { id: 5, title: 'Dub Frequency', genre: 'reggae', price: 4.49, bpm: 72, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3', artwork: 'radio', color: 'from-jamaica-green to-teal-800' },
-            { id: 6, title: 'Cyber Yard', genre: 'dancehall', price: 6.99, bpm: 100, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3', artwork: 'fire', color: 'from-purple-600 to-pink-700' },
-            { id: 7, title: 'Island Algorithm', genre: 'electronic', price: 4.99, bpm: 140, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3', artwork: 'cpu-chip', color: 'from-blue-500 to-indigo-800' },
-            { id: 8, title: 'Accra Bounce', genre: 'afrobeats', price: 5.99, bpm: 110, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3', artwork: 'musical-note', color: 'from-yellow-500 to-orange-600' },
-            { id: 9, title: 'Zion Train', genre: 'reggae', price: 4.99, bpm: 80, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3', artwork: 'train', color: 'from-green-600 to-emerald-900' },
+            {
+                id: 1,
+                title: 'Roots Revival',
+                genre: 'reggae',
+                price: 4.99,
+                bpm: 78,
+                duration: '3:24',
+                preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+                artwork: 'music-note',
+                color: 'from-jamaica-green to-emerald-800',
+                tags: ['classic', 'acoustic', 'jamaica']
+            },
+            {
+                id: 2,
+                title: 'Kingston Nights',
+                genre: 'dancehall',
+                price: 5.99,
+                bpm: 95,
+                duration: '2:58',
+                preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+                artwork: 'speaker-wave',
+                color: 'from-jamaica-gold to-amber-700',
+                tags: ['party', 'urban', 'modern']
+            },
+            {
+                id: 3,
+                title: 'Digital Jah',
+                genre: 'electronic',
+                price: 3.99,
+                bpm: 128,
+                duration: '4:12',
+                preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+                artwork: 'bolt',
+                color: 'from-turquoise to-cyan-800',
+                tags: ['synth', 'digital', 'futuristic']
+            },
+            {
+                id: 4,
+                title: 'Lagos to Kingston',
+                genre: 'afrobeats',
+                price: 5.49,
+                bpm: 105,
+                duration: '3:45',
+                preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
+                artwork: 'globe-alt',
+                color: 'from-orange-500 to-red-700',
+                tags: ['fusion', 'international', 'dance']
+            },
+            {
+                id: 5,
+                title: 'Dub Frequency',
+                genre: 'reggae',
+                price: 4.49,
+                bpm: 72,
+                duration: '4:01',
+                preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
+                artwork: 'radio',
+                color: 'from-jamaica-green to-teal-800',
+                tags: ['dub', 'bass', 'reverb']
+            }
         ];
 
         const DEFAULT_BUNDLES = [
-            { id: 'b1', title: 'Reggae Essentials', tracks: [1, 5, 9], price: 9.99, discount: '33% OFF', artwork: 'guitar', color: 'from-jamaica-green to-emerald-900' },
-            { id: 'b2', title: 'Dancehall Fire', tracks: [2, 6], price: 9.99, discount: '25% OFF', artwork: 'volume-up', color: 'from-jamaica-gold to-orange-700' },
-            { id: 'b3', title: 'Caribbean Fusion', tracks: [1, 2, 4, 8], price: 14.99, discount: '40% OFF', artwork: 'palm-tree', color: 'from-turquoise to-blue-800' },
-            { id: 'b4', title: 'AI Producer Pack', tracks: [3, 7], price: 6.99, discount: '30% OFF', artwork: 'disc', color: 'from-purple-600 to-indigo-900' },
+            {
+                id: 'b1',
+                title: 'Reggae Essentials',
+                tracks: [1, 5],
+                price: 9.99,
+                discount: '33% OFF',
+                artwork: 'guitar',
+                color: 'from-jamaica-green to-emerald-900',
+                description: 'Complete reggae collection for your projects'
+            },
+            {
+                id: 'b2',
+                title: 'Island Fusion',
+                tracks: [2, 3, 4],
+                price: 12.99,
+                discount: '25% OFF',
+                artwork: 'palm-tree',
+                color: 'from-jamaica-gold to-orange-700',
+                description: 'Modern Caribbean meets electronic'
+            }
         ];
 
-        function deepClone(obj) {
-            return JSON.parse(JSON.stringify(obj));
-        }
+        // Default page content
+        const DEFAULT_PAGE_CONTENT = {
+            heroMainTitle: 'VibeCraft',
+            heroSubtitle: 'AI MUSIC',
+            heroDescription: 'Premium AI-Generated Caribbean Beats • Reggae • Dancehall • Afrobeats • Electronic',
+            whatsappNumber: '1234567890',
+            contactEmail: 'contact@VibeCraftai.music'
+        };
 
-        let genres = [...DEFAULT_GENRES];
-        let tracks = deepClone(DEFAULT_TRACKS);
-        let bundles = deepClone(DEFAULT_BUNDLES);
+        // App state
+        let appState = {
+            genres: [...DEFAULT_GENRES],
+            tracks: [...DEFAULT_TRACKS],
+            bundles: [...DEFAULT_BUNDLES],
+            cart: [],
+            currentTrack: null,
+            isPlaying: false,
+            currentGenre: 'all',
+            currentSearch: '',
+            pageContent: { ...DEFAULT_PAGE_CONTENT }
+        };
 
-        // Runtime-only fields will be attached to track objects:
-        // track.artworkUrl (objectURL), track.audioUrl (objectURL)
-
-        // ==========================================================
-        // ICONS
-        // ==========================================================
+        // Icon definitions
         const icons = {
-            'music-note': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm8-14v6a2 2 0 002 2h2M9 19l3-3m0 0l3 3m-3-3v12"></path></svg>',
-            'speaker-wave': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>',
-            'bolt': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>',
-            'globe-alt': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>',
-            'radio': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18.53.02 19.47A13.949 13.949 0 0112 20c7.2 0 13-5.8 13-13S19.2 0 12 0a13.95 13.95 0 00-11.98 6.47M12 18.53l6.47-1.06"></path></svg>',
-            'fire': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2c2.5 3 4 5.5 4 8a4 4 0 11-8 0c0-2.5 1.5-5 4-8z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14c-2 2-2 6 4 8 6-2 6-6 4-8"></path></svg>',
-            'cpu-chip': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>',
-            'musical-note': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm8-14v6a2 2 0 002 2h2"></path></svg>',
-            'train': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 16V8a4 4 0 014-4h6a4 4 0 014 4v8a3 3 0 01-3 3H8a3 3 0 01-3-3z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 19l-2 3m14-3l2 3"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11h.01M16 11h.01"></path></svg>',
-            'guitar': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3l7 7-2 2-2-2-2 2 2 2-2 2-2-2-2 2 2 2-2 2-7-7 2-2 2 2 2-2-2-2 2-2 2 2 2-2-2-2 2-2z"></path></svg>',
-            'volume-up': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5L6 9H3v6h3l5 4V5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 9a4 4 0 010 6m2-9a7 7 0 010 12"></path></svg>',
-            'palm-tree': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22v-9"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10c-2-1-4-1-6 0 1-3 3-5 6-5"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 10c2-1 4-1 6 0-1-3-3-5-6-5"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9c0-4 1-7 3-7s3 3 3 7"></path></svg>',
-            'disc': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="2"/><circle cx="12" cy="12" r="2" stroke-width="2"/></svg>'
+            'music-note': '<svg class="w-16 h-16 text-white opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19v-8a3 3 0 013-3h6a3 3 0 013 3v8l-6-3m-6-1h12"/></svg>',
+            'speaker-wave': '<svg class="w-16 h-16 text-white opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>',
+            'bolt': '<svg class="w-16 h-16 text-white opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>',
+            'globe-alt': '<svg class="w-16 h-16 text-white opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
+            'radio': '<svg class="w-16 h-16 text-white opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18.53.02 19.47A13.949 13.949 0 0112 20c7.2 0 13-5.8 13-13S19.2 0 12 0a13.95 13.95 0 00-11.98 6.47M12 18.53l6.47-1.06"/></svg>',
+            'guitar': '<svg class="w-16 h-16 text-white opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
+            'palm-tree': '<svg class="w-16 h-16 text-white opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707 .707M6.343 17.657l-.707 .707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>'
         };
 
         // ==========================================================
-        // INDEXEDDB HELPERS
+        // UTILITY FUNCTIONS
         // ==========================================================
-        let _fileDB = null;
-
-        function openFileDB() {
-            if (!('indexedDB' in window)) {
-                return Promise.reject(new Error('IndexedDB not supported'));
-            }
-
-            if (_fileDB) return Promise.resolve(_fileDB);
-
-            return new Promise((resolve, reject) => {
-                const req = indexedDB.open(FILE_DB_NAME, FILE_DB_VERSION);
-
-                req.onupgradeneeded = () => {
-                    const db = req.result;
-                    if (!db.objectStoreNames.contains(FILE_STORE)) {
-                        db.createObjectStore(FILE_STORE);
-                    }
-                };
-
-                req.onsuccess = () => {
-                    _fileDB = req.result;
-                    resolve(_fileDB);
-                };
-
-                req.onerror = () => reject(req.error);
-            });
-        }
-
-        async function idbPutBlob(key, blob) {
-            const db = await openFileDB();
-            return new Promise((resolve, reject) => {
-                const tx = db.transaction(FILE_STORE, 'readwrite');
-                tx.objectStore(FILE_STORE).put(blob, key);
-                tx.oncomplete = () => resolve(true);
-                tx.onerror = () => reject(tx.error);
-            });
-        }
-
-        async function idbGetBlob(key) {
-            const db = await openFileDB();
-            return new Promise((resolve, reject) => {
-                const tx = db.transaction(FILE_STORE, 'readonly');
-                const req = tx.objectStore(FILE_STORE).get(key);
-                req.onsuccess = () => resolve(req.result || null);
-                req.onerror = () => reject(req.error);
-            });
-        }
-
-        async function idbDelete(key) {
-            const db = await openFileDB();
-            return new Promise((resolve, reject) => {
-                const tx = db.transaction(FILE_STORE, 'readwrite');
-                tx.objectStore(FILE_STORE).delete(key);
-                tx.oncomplete = () => resolve(true);
-                tx.onerror = () => reject(tx.error);
-            });
-        }
-
-        function artworkKey(trackId) {
-            return `artwork:${trackId}`;
-        }
-
-        function audioKey(trackId) {
-            return `audio:${trackId}`;
-        }
-
-        async function dataUrlToBlob(dataUrl) {
-            const res = await fetch(dataUrl);
-            return await res.blob();
-        }
-
-        // ==========================================================
-        // STATE
-        // ==========================================================
-        let cart = safeParseJSON(localStorage.getItem(CART_KEY), []) || [];
-        let currentTrack = null;
-        let isPlaying = false;
-        let currentGenre = 'all';
-        let currentSearch = '';
-
-        // ==========================================================
-        // DOM ELEMENTS
-        // ==========================================================
-        const mainPlayer = document.getElementById('mainPlayer');
-        const floatingPlayer = document.getElementById('floatingPlayer');
-        const playPauseBtn = document.getElementById('playPauseBtn');
-        const playIcon = document.getElementById('playIcon');
-        const volumeSlider = document.getElementById('volumeSlider');
-
-        // ==========================================================
-        // UTIL
-        // ==========================================================
-        function safeParseJSON(str, fallback) {
-            try {
-                return JSON.parse(str);
-            } catch {
-                return fallback;
+        
+        function showLoading(show = true) {
+            const overlay = document.getElementById('loadingOverlay');
+            if (overlay) {
+                overlay.style.display = show ? 'flex' : 'none';
             }
         }
 
-        function analyticsEvent(name, params = {}) {
-            try {
-                if (typeof window.gtag === 'function') window.gtag('event', name, params);
-            } catch (e) {
-                // ignore analytics failures
-            }
-        }
-
-        function showNotification(msg, tone = 'success') {
-            const notif = document.createElement('div');
-            notif.className = `fixed top-24 right-4 ${tone === 'error' ? 'bg-red-600' : 'bg-jamaica-green'} text-white px-6 py-3 rounded-xl font-rajdhani z-50`;
-            notif.textContent = msg;
-            document.body.appendChild(notif);
-            setTimeout(() => notif.remove(), 2500);
-        }
-
-        function formatPrice(value) {
-            const num = Number(value);
-            if (Number.isFinite(num)) return `$${num.toFixed(2)}`;
-            return '$0.00';
-        }
-
-        // ==========================================================
-        // PERSISTENCE (meta in localStorage)
-        // ==========================================================
-        function stripRuntimeTrackFields(track) {
-            const t = { ...track };
-            delete t.artworkUrl;
-            delete t.audioUrl;
-            // Legacy fields that could blow up storage
-            delete t.artworkData;
-            delete t.previewData;
-            return t;
-        }
-
-        function persistMeta({ silent = false } = {}) {
-            const payload = {
-                schema: 2,
-                updatedAt: Date.now(),
-                genres,
-                tracks: tracks.map(stripRuntimeTrackFields),
-                bundles: bundles
-            };
-
-            try {
-                localStorage.setItem(META_KEY, JSON.stringify(payload));
-                return true;
-            } catch (e) {
-                console.warn('Meta save failed:', e);
-                if (!silent) showNotification('Save failed: browser storage blocked/full.', 'error');
-                return false;
-            }
-        }
-
-        function applyMeta(meta) {
-            if (!meta || typeof meta !== 'object') return;
-
-            if (Array.isArray(meta.genres) && meta.genres.length) {
-                genres = meta.genres.map(g => String(g).trim().toLowerCase()).filter(Boolean);
-            }
-
-            if (Array.isArray(meta.tracks)) {
-                tracks.splice(0, tracks.length, ...meta.tracks.map(normalizeTrack));
-            }
-
-            if (Array.isArray(meta.bundles)) {
-                bundles.splice(0, bundles.length, ...meta.bundles);
-            }
-        }
-
-        function normalizeTrack(t) {
-            const track = { ...t };
-            track.id = Number(track.id);
-            track.title = String(track.title || 'Untitled Track');
-            track.genre = String(track.genre || (genres[0] || 'reggae')).toLowerCase();
-            track.price = Number(track.price ?? 0);
-            track.bpm = parseInt(track.bpm ?? 0, 10) || 0;
-            track.preview = String(track.preview || '');
-            track.artwork = String(track.artwork || 'music-note');
-            track.color = String(track.color || 'from-jamaica-green to-emerald-800');
-
-            // File flags
-            track.hasArtwork = !!track.hasArtwork;
-            track.hasAudio = !!track.hasAudio;
-            track.artworkName = track.artworkName || null;
-            track.audioName = track.audioName || null;
-            track.artworkType = track.artworkType || null;
-            track.audioType = track.audioType || null;
-
-            return track;
-        }
-
-        async function hydrateMediaFromDB() {
-            for (const t of tracks) {
-                if (t.hasArtwork) {
-                    try {
-                        const blob = await idbGetBlob(artworkKey(t.id));
-                        if (blob) {
-                            if (t.artworkUrl) URL.revokeObjectURL(t.artworkUrl);
-                            t.artworkUrl = URL.createObjectURL(blob);
-                        } else {
-                            t.hasArtwork = false;
-                        }
-                    } catch (e) {
-                        console.warn('Failed to load artwork from DB', t.id, e);
-                    }
-                }
-
-                if (t.hasAudio) {
-                    try {
-                        const blob = await idbGetBlob(audioKey(t.id));
-                        if (blob) {
-                            if (t.audioUrl) URL.revokeObjectURL(t.audioUrl);
-                            t.audioUrl = URL.createObjectURL(blob);
-                        } else {
-                            t.hasAudio = false;
-                        }
-                    } catch (e) {
-                        console.warn('Failed to load audio from DB', t.id, e);
-                    }
-                }
-            }
-        }
-
-        async function migrateLegacyStorageIfNeeded() {
-            // If new meta already exists, nothing to do.
-            const meta = safeParseJSON(localStorage.getItem(META_KEY), null);
-            if (meta) return;
-
-            const legacy = safeParseJSON(localStorage.getItem(LEGACY_KEY), null);
-            if (!legacy) return;
-
-            // Apply legacy arrays first
-            applyMeta(legacy);
-
-            let migratedSomething = false;
-
-            // Convert any embedded base64 media into IndexedDB
-            for (const t of tracks) {
-                // Legacy artwork
-                if (typeof t.artworkData === 'string' && t.artworkData.startsWith('data:')) {
-                    try {
-                        const blob = await dataUrlToBlob(t.artworkData);
-                        await idbPutBlob(artworkKey(t.id), blob);
-                        t.hasArtwork = true;
-                        t.artworkType = blob.type || 'image/*';
-                        t.artworkName = t.artworkName || 'artwork';
-                        if (t.artworkUrl) URL.revokeObjectURL(t.artworkUrl);
-                        t.artworkUrl = URL.createObjectURL(blob);
-                        delete t.artworkData;
-                        migratedSomething = true;
-                    } catch (e) {
-                        console.warn('Legacy artwork migration failed', t.id, e);
-                    }
-                }
-
-                // Legacy audio
-                if (typeof t.previewData === 'string' && t.previewData.startsWith('data:')) {
-                    try {
-                        const blob = await dataUrlToBlob(t.previewData);
-                        await idbPutBlob(audioKey(t.id), blob);
-                        t.hasAudio = true;
-                        t.audioType = blob.type || 'audio/*';
-                        t.audioName = t.audioName || 'audio';
-                        if (t.audioUrl) URL.revokeObjectURL(t.audioUrl);
-                        t.audioUrl = URL.createObjectURL(blob);
-                        delete t.previewData;
-                        migratedSomething = true;
-                    } catch (e) {
-                        console.warn('Legacy audio migration failed', t.id, e);
-                    }
-                }
-            }
-
-            // Remove legacy big storage to free quota before saving new meta
-            try { localStorage.removeItem(LEGACY_KEY); } catch (e) {}
-
-            // Save new meta
-            const ok = persistMeta({ silent: true });
-            if (ok && migratedSomething) {
-                showNotification('Migrated legacy uploads to safer storage (IndexedDB).');
-            }
-        }
-
-        // ==========================================================
-        // RENDER
-        // ==========================================================
-        function getVisibleTracks() {
-            let list = [...tracks];
-
-            if (currentGenre !== 'all') {
-                list = list.filter(t => String(t.genre).toLowerCase() === currentGenre);
-            }
-
-            if (currentSearch) {
-                const q = currentSearch.toLowerCase();
-                list = list.filter(t =>
-                    String(t.title).toLowerCase().includes(q) ||
-                    String(t.genre).toLowerCase().includes(q)
-                );
-            }
-
-            return list;
-        }
-
-        function renderGenres() {
-            // Admin list
-            const listEl = document.getElementById('genresList');
-            listEl.innerHTML = genres.map(genre => `
-                <div class="flex justify-between items-center bg-dark/50 p-3 rounded-lg">
-                    <div class="flex items-center gap-2">
-                        <span class="text-white capitalize">${genre}</span>
-                        <button onclick="renameGenre('${genre}')" class="text-turquoise hover:text-white text-xs">Edit</button>
-                    </div>
-                    <button onclick="removeGenre('${genre}')" class="text-red-400 hover:text-red-300">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-            `).join('');
-
-            // Filters
-            const filterEl = document.getElementById('genreFilters');
-            if (!filterEl) return;
-
-            filterEl.innerHTML = `
-                <button class="genre-btn hologram-btn px-5 py-2 rounded-full text-sm font-rajdhani ${currentGenre === 'all' ? 'bg-jamaica-gold/30' : ''}" data-genre="all">All</button>
-                ${genres.map(g => `
-                    <button class="genre-btn hologram-btn px-5 py-2 rounded-full text-sm font-rajdhani ${currentGenre === g ? 'bg-jamaica-gold/30' : ''}" data-genre="${g}">${g.charAt(0).toUpperCase() + g.slice(1)}</button>
-                `).join('')}
-            `;
-
-            filterEl.querySelectorAll('.genre-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    currentGenre = btn.dataset.genre;
-                    renderGenres();
-                    renderTracks();
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
                 });
-            });
-        }
-
-        function renderTracks() {
-            const grid = document.getElementById('tracksGrid');
-            const filtered = getVisibleTracks();
-
-            grid.innerHTML = filtered.map((track, idx) => {
-                const img = track.artworkUrl
-                    ? `<img src="${track.artworkUrl}" alt="${track.title} artwork" class="w-full h-full object-cover absolute inset-0" />`
-                    : '';
-
-                const icon = !track.artworkUrl
-                    ? `<div class="absolute inset-0 flex items-center justify-center">${icons[track.artwork] || icons['music-note']}</div>`
-                    : '';
-
-                return `
-                <div class="track-card parallax-card bg-darker/80 border border-jamaica-green/20 rounded-2xl overflow-hidden fade-in relative" style="animation-delay: ${idx * 0.06}s">
-                    <div class="relative">
-                        <div class="h-48 bg-gradient-to-br ${track.color} relative overflow-hidden">
-                            ${img}
-                            ${icon}
-                            <div class="absolute inset-0 bg-black/25"></div>
-
-                            <div class="equalizer absolute bottom-0 left-0 right-0">
-                                ${Array(12).fill().map((_, i) => `<div class="eq-bar" style="animation-delay: ${i * 0.08}s;"></div>`).join('')}
-                            </div>
-
-                            <button onclick="playTrack(${track.id})" class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center z-10">
-                                <div class="w-16 h-16 rounded-full bg-jamaica-gold/90 flex items-center justify-center text-dark hover:scale-110 transition-transform">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.665z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                </div>
-                            </button>
-                        </div>
-                        <span class="absolute top-3 right-3 bg-dark/80 px-3 py-1 rounded-full text-xs font-rajdhani text-turquoise uppercase z-10">
-                            ${track.genre}
-                        </span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-orbitron text-lg text-white mb-1">${track.title}</h3>
-                        <p class="text-gray-500 text-sm font-rajdhani mb-3">${track.bpm} BPM • VibeCraft AI</p>
-                        <div class="flex justify-between items-center">
-                            <span class="font-orbitron text-2xl text-jamaica-gold">${formatPrice(track.price)}</span>
-                            <div class="flex gap-2">
-                                <button onclick="playTrack(${track.id})" class="hologram-btn px-4 py-2 rounded-lg text-sm font-rajdhani flex items-center gap-1">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
-                                    Preview
-                                </button>
-                                <button onclick="addToCart(${track.id})" class="hologram-btn px-4 py-2 rounded-lg text-sm font-rajdhani bg-jamaica-gold/20 border-jamaica-gold/50 flex items-center gap-1">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 1.5M7 13l1.5 1.5M9 3h6m-6 0h6m2 3v12a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2z"></path></svg>
-                                    Buy
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                `;
-            }).join('');
-        }
-
-        function renderBundles() {
-            const grid = document.getElementById('bundlesGrid');
-
-            grid.innerHTML = bundles.map((bundle, idx) => `
-                <div class="track-card parallax-card bg-darker/80 border border-turquoise/20 rounded-2xl overflow-hidden fade-in" style="animation-delay: ${idx * 0.06}s">
-                    <div class="h-40 bg-gradient-to-br ${bundle.color} flex items-center justify-center relative">
-                        ${icons[bundle.artwork] || icons['disc']}
-                        <span class="absolute top-3 right-3 bg-jamaica-gold text-dark px-3 py-1 rounded-full text-xs font-bold">
-                            ${bundle.discount}
-                        </span>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-orbitron text-lg text-white mb-2">${bundle.title}</h3>
-                        <p class="text-gray-500 text-sm font-rajdhani mb-3">${bundle.tracks.length} Premium Tracks</p>
-                        <div class="flex flex-wrap gap-1 mb-4">
-                            ${bundle.tracks.map(id => {
-                                const t = tracks.find(tr => tr.id === id);
-                                return t ? `<span class="text-xs bg-dark px-2 py-1 rounded text-turquoise">${t.title}</span>` : '';
-                            }).join('')}
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="font-orbitron text-2xl text-jamaica-gold">${formatPrice(bundle.price)}</span>
-                            <button onclick="addBundleToCart('${bundle.id}')" class="hologram-btn px-5 py-2 rounded-lg text-sm font-rajdhani bg-turquoise/20 border-turquoise/50 flex items-center gap-1">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-                                Get Bundle
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderTrackEditors() {
-            const container = document.getElementById('trackEditors');
-
-            container.innerHTML = tracks.map((track) => {
-                const artworkPreview = track.artworkUrl
-                    ? `<img src="${track.artworkUrl}" alt="Artwork Preview" class="w-16 h-16 rounded object-cover" />`
-                    : `<div class="w-16 h-16 rounded bg-dark/40 flex items-center justify-center">${(icons[track.artwork] || icons['music-note']).replace('w-16 h-16', 'w-8 h-8')}</div>`;
-
-                const artworkInfo = track.hasArtwork ? (track.artworkName || 'Artwork uploaded') : 'No artwork uploaded';
-                const audioInfo = track.hasAudio ? (track.audioName || 'Audio uploaded') : 'No audio uploaded';
-
-                return `
-                <div class="track-editor">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="font-orbitron text-lg text-white">Track ${track.id}: ${track.title}</h3>
-                        <button onclick="removeTrack(${track.id})" class="text-red-400 hover:text-red-300 text-sm">Remove</button>
-                    </div>
-
-                    <div class="space-y-4">
-                        <!-- Artwork -->
-                        <div class="drop-zone h-32 rounded-lg flex items-center justify-center bg-darker/50 border-2 border-dashed border-jamaica-green/30 relative" data-track="${track.id}" data-type="artwork">
-                            <div class="drop-content text-center flex items-center gap-4">
-                                ${artworkPreview}
-                                <div class="text-left">
-                                    <p class="text-sm text-gray-300">Drop album artwork here</p>
-                                    <p class="text-xs text-gray-500">PNG/JPG (recommended under 1–2MB)</p>
-                                </div>
-                            </div>
-                            <input type="file" accept="image/*" onchange="handleFileUpload(event, ${track.id}, 'artwork')">
-                        </div>
-                        <div class="flex justify-between items-center text-xs text-gray-400">
-                            <span>${artworkInfo}</span>
-                            ${track.hasArtwork ? `<button onclick="clearArtwork(${track.id})" class="text-red-300 hover:text-red-200">Clear</button>` : `<span></span>`}
-                        </div>
-
-                        <!-- Audio -->
-                        <div class="drop-zone h-24 rounded-lg flex items-center justify-center bg-darker/50 border-2 border-dashed border-jamaica-gold/30 relative" data-track="${track.id}" data-type="audio">
-                            <div class="drop-content text-center">
-                                <p class="text-sm text-gray-300">Drop audio file here</p>
-                                <p class="text-xs text-gray-500">MP3/WAV (preview). Stored in IndexedDB.</p>
-                            </div>
-                            <input type="file" accept="audio/*" onchange="handleFileUpload(event, ${track.id}, 'audio')">
-                        </div>
-                        <div class="flex justify-between items-center text-xs text-gray-400">
-                            <span>${audioInfo}</span>
-                            ${track.hasAudio ? `<button onclick="clearAudio(${track.id})" class="text-red-300 hover:text-red-200">Clear</button>` : `<span></span>`}
-                        </div>
-
-                        <!-- Track Details -->
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm text-gray-400 mb-2">Title</label>
-                                <input type="text" value="${escapeHtml(track.title)}" onchange="updateTrackField(${track.id}, 'title', this.value)"
-                                       class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
-                            </div>
-                            <div>
-                                <label class="block text-sm text-gray-400 mb-2">Genre</label>
-                                <select onchange="updateTrackField(${track.id}, 'genre', this.value)"
-                                        class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
-                                    ${genres.map(g => `<option value="${g}" ${track.genre === g ? 'selected' : ''}>${g.charAt(0).toUpperCase() + g.slice(1)}</option>`).join('')}
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm text-gray-400 mb-2">Price ($)</label>
-                                <input type="number" step="0.01" value="${Number(track.price).toFixed(2)}" onchange="updateTrackField(${track.id}, 'price', parseFloat(this.value))"
-                                       class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
-                            </div>
-                            <div>
-                                <label class="block text-sm text-gray-400 mb-2">BPM</label>
-                                <input type="number" value="${track.bpm}" onchange="updateTrackField(${track.id}, 'bpm', parseInt(this.value))"
-                                       class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                `;
-            }).join('');
+            }
         }
 
         function escapeHtml(str) {
@@ -1480,578 +952,854 @@
         }
 
         // ==========================================================
-        // PLAYER
+        // DATA PERSISTENCE
         // ==========================================================
-        function setPlayIcon(isPause) {
-            playIcon.innerHTML = isPause
-                ? '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6"></path></svg>'
-                : '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.665z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>';
-        }
-
-        function playTrack(id) {
-            const track = tracks.find(t => t.id === id);
-            if (!track) return;
-
-            currentTrack = track;
-            const audioSrc = track.audioUrl || track.preview;
-
-            if (!audioSrc) {
-                showNotification('No preview audio available for this track.', 'error');
-                return;
-            }
-
-            mainPlayer.src = audioSrc;
-            mainPlayer.play();
-            isPlaying = true;
-
-            document.getElementById('playerTitle').textContent = track.title;
-
-            if (track.artworkUrl) {
-                document.getElementById('playerArt').innerHTML = `<img src="${track.artworkUrl}" alt="${track.title}" class="w-12 h-12 rounded-lg object-cover" />`;
-            } else {
-                document.getElementById('playerArt').innerHTML = (icons[track.artwork] || icons['music-note']).replace('w-16 h-16', 'w-6 h-6');
-            }
-
-            setPlayIcon(true);
-            floatingPlayer.classList.remove('hidden');
-
-            analyticsEvent('preview_track', { track_title: track.title });
-        }
-
-        playPauseBtn.addEventListener('click', () => {
-            if (!currentTrack) {
-                showNotification('Select a track to play.', 'error');
-                return;
-            }
-
-            if (isPlaying) {
-                mainPlayer.pause();
-                isPlaying = false;
-                setPlayIcon(false);
-            } else {
-                mainPlayer.play();
-                isPlaying = true;
-                setPlayIcon(true);
-            }
-        });
-
-        mainPlayer.addEventListener('ended', () => {
-            isPlaying = false;
-            setPlayIcon(false);
-        });
-
-        volumeSlider.addEventListener('input', (e) => {
-            mainPlayer.volume = Number(e.target.value) / 100;
-        });
-
-        document.getElementById('closePlayer').addEventListener('click', () => {
-            mainPlayer.pause();
-            floatingPlayer.classList.add('hidden');
-            isPlaying = false;
-            setPlayIcon(false);
-        });
-
-        // ==========================================================
-        // CART
-        // ==========================================================
-        function saveCart() {
+        
+        function saveToStorage() {
             try {
-                localStorage.setItem(CART_KEY, JSON.stringify(cart));
-            } catch (e) {
-                console.warn('Cart save failed', e);
+                const payload = {
+                    timestamp: Date.now(),
+                    version: '4.0',
+                    data: {
+                        genres: appState.genres,
+                        tracks: appState.tracks,
+                        bundles: appState.bundles,
+                        pageContent: appState.pageContent
+                    }
+                };
+                
+                localStorage.setItem(STORAGE_KEYS.MUSIC_DATA, JSON.stringify(payload));
+                localStorage.setItem(STORAGE_KEYS.CART, JSON.stringify(appState.cart));
+                return true;
+            } catch (error) {
+                console.warn('Storage save failed:', error);
+                return false;
             }
-            updateCartCount();
         }
 
-        function updateCartCount() {
-            document.getElementById('cartCount').textContent = cart.length;
+        function loadFromStorage() {
+            try {
+                const metaData = safeParseJSON(localStorage.getItem(STORAGE_KEYS.MUSIC_DATA), null);
+                const cartData = safeParseJSON(localStorage.getItem(STORAGE_KEYS.CART), []);
+                const pageData = safeParseJSON(localStorage.getItem(STORAGE_KEYS.PAGE_CONTENT), null);
+
+                if (metaData && metaData.data) {
+                    appState.genres = metaData.data.genres || [...DEFAULT_GENRES];
+                    appState.tracks = metaData.data.tracks || [...DEFAULT_TRACKS];
+                    appState.bundles = metaData.data.bundles || [...DEFAULT_BUNDLES];
+                }
+
+                appState.cart = Array.isArray(cartData) ? cartData : [];
+                
+                if (pageData) {
+                    appState.pageContent = { ...DEFAULT_PAGE_CONTENT, ...pageData };
+                }
+
+                return true;
+            } catch (error) {
+                console.warn('Storage load failed:', error);
+                return false;
+            }
         }
 
-        function addToCart(id) {
-            const track = tracks.find(t => t.id === id);
-            if (!track) return;
-
-            if (!cart.find(item => item.id === id && item.type === 'track')) {
-                cart.push({ id, type: 'track', title: track.title, price: track.price });
-                saveCart();
-                showNotification(`${track.title} added to cart!`);
-                analyticsEvent('add_to_cart', { track_title: track.title, price: track.price });
-            } else {
-                showNotification('Track already in cart!');
+        function safeParseJSON(str, fallback = null) {
+            try {
+                return JSON.parse(str);
+            } catch {
+                return fallback;
             }
+        }
+
+        // ==========================================================
+        // RENDERING FUNCTIONS
+        // ==========================================================
+        
+        function renderTracks() {
+            const grid = document.getElementById('tracksGrid');
+            if (!grid) return;
+
+            console.log('Rendering tracks:', appState.tracks.length);
+
+            // Filter tracks based on current genre and search
+            let filteredTracks = [...appState.tracks];
+            
+            if (appState.currentGenre !== 'all') {
+                filteredTracks = filteredTracks.filter(track => 
+                    track.genre.toLowerCase() === appState.currentGenre.toLowerCase()
+                );
+            }
+
+            if (appState.currentSearch) {
+                const searchQuery = appState.currentSearch.toLowerCase();
+                filteredTracks = filteredTracks.filter(track => 
+                    track.title.toLowerCase().includes(searchQuery) ||
+                    track.genre.toLowerCase().includes(searchQuery) ||
+                    (track.tags && track.tags.some(tag => tag.toLowerCase().includes(searchQuery)))
+                );
+            }
+
+            // Create track cards
+            const trackCards = filteredTracks.map((track, index) => `
+                <div class="track-card parallax-card bg-darker/80 border border-jamaica-green/20 rounded-2xl overflow-hidden fade-in" 
+                     style="animation-delay: ${index * 0.1}s"
+                     data-track-id="${track.id}"
+                     role="article"
+                     aria-label="${track.title} by VibeCraft AI">
+                    
+                    <div class="relative">
+                        <div class="h-56 bg-gradient-to-br ${track.color} flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/20"></div>
+                            <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            
+                            <!-- Play overlay -->
+                            <button onclick="playTrack(${track.id})" 
+                                    class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center z-10 focus:outline-none focus:ring-2 focus:ring-jamaica-gold"
+                                    aria-label="Play ${track.title}">
+                                <div class="w-20 h-20 rounded-full bg-jamaica-gold/90 flex items-center justify-center text-dark hover:scale-110 transition-transform">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.665z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                            </button>
+                            
+                            <!-- Equalizer Background -->
+                            <div class="equalizer">
+                                ${Array(12).fill().map((_, i) => `<div class="eq-bar" style="animation-delay: ${i * 0.1}s;"></div>`).join('')}
+                            </div>
+                            
+                            <!-- Artwork -->
+                            <div class="relative z-5">
+                                ${icons[track.artwork] || icons['music-note']}
+                            </div>
+                        </div>
+                        
+                        <!-- Track info -->
+                        <div class="p-6">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex-1">
+                                    <h3 class="font-orbitron text-xl text-white mb-1">${escapeHtml(track.title)}</h3>
+                                    <p class="text-sm text-muted">${track.bpm} BPM • ${track.duration || 'N/A'} • VibeCraft AI</p>
+                                </div>
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-jamaica-green/20 text-jamaica-green uppercase">
+                                    ${track.genre}
+                                </span>
+                            </div>
+                            
+                            <!-- Tags -->
+                            ${track.tags ? `
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    ${track.tags.map(tag => `
+                                        <span class="px-2 py-1 rounded text-xs bg-jamaica-gold/20 text-jamaica-gold">#${escapeHtml(tag)}</span>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                            
+                            <!-- Actions -->
+                            <div class="flex items-center justify-between">
+                                <span class="font-orbitron text-2xl text-jamaica-gold">$${track.price}</span>
+                                <div class="flex gap-2">
+                                    <button onclick="playTrack(${track.id})" 
+                                            class="hologram-btn px-4 py-2 rounded-lg font-semibold flex items-center gap-2 hover:scale-105 transition-transform"
+                                            aria-label="Preview ${track.title}">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                                        </svg>
+                                        Preview
+                                    </button>
+                                    <button onclick="addToCart(${track.id})" 
+                                            class="hologram-btn px-4 py-2 rounded-lg font-semibold bg-jamaica-gold/20 border-jamaica-gold/50 flex items-center gap-2 hover:scale-105 transition-transform"
+                                            aria-label="Add ${track.title} to cart">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 1.5M7 13l1.5 1.5M9 3h6m-6 0h6m2 3v12a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2z"/>
+                                        </svg>
+                                        Buy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            grid.innerHTML = trackCards || `
+                <div class="col-span-full text-center py-16">
+                    <svg class="w-16 h-16 text-gray-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"/>
+                    </svg>
+                    <h3 class="text-xl font-semibold text-white mb-2">No tracks found</h3>
+                    <p class="text-gray-500">Try adjusting your search or filter criteria.</p>
+                </div>
+            `;
+            
+            console.log('Tracks rendered successfully');
+        }
+
+        function renderBundles() {
+            const grid = document.getElementById('bundlesGrid');
+            if (!grid) return;
+
+            const bundleCards = appState.bundles.map((bundle, index) => `
+                <div class="track-card parallax-card bg-darker/80 border border-turquoise/20 rounded-2xl overflow-hidden fade-in" 
+                     style="animation-delay: ${index * 0.1}s"
+                     data-bundle-id="${bundle.id}"
+                     role="article"
+                     aria-label="${bundle.title} bundle">
+                    
+                    <div class="h-40 bg-gradient-to-br ${bundle.color} flex items-center justify-center relative">
+                        ${icons[bundle.artwork] || icons['palm-tree']}
+                        <span class="absolute top-3 right-3 bg-jamaica-gold text-dark px-3 py-1 rounded-full text-sm font-bold">
+                            ${bundle.discount}
+                        </span>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="font-orbitron text-xl text-white mb-2">${escapeHtml(bundle.title)}</h3>
+                        <p class="text-sm text-gray-500 mb-4">${bundle.tracks.length} Premium Tracks</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            ${bundle.tracks.map(trackId => {
+                                const track = appState.tracks.find(t => t.id === trackId);
+                                return track ? `
+                                    <span class="px-3 py-1 rounded-full text-xs bg-dark text-turquoise border border-turquoise/30">
+                                        ${escapeHtml(track.title)}
+                                    </span>
+                                ` : '';
+                            }).join('')}
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="font-orbitron text-2xl text-jamaica-gold">$${bundle.price}</span>
+                            <button onclick="addBundleToCart('${bundle.id}')" 
+                                    class="hologram-btn px-6 py-3 rounded-lg font-semibold bg-turquoise/20 border-turquoise/50 flex items-center gap-2 hover:scale-105 transition-transform"
+                                    aria-label="Add ${bundle.title} bundle to cart">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                                </svg>
+                                Get Bundle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            grid.innerHTML = bundleCards;
+        }
+
+        function renderGenres() {
+            const filterContainer = document.getElementById('genreFilters');
+            const listContainer = document.getElementById('genresList');
+            
+            if (filterContainer) {
+                const genreButtons = [
+                    '<button class="genre-btn px-6 py-3 rounded-full font-semibold transition-all hover:scale-105 ' + 
+                    (appState.currentGenre === 'all' ? 'bg-jamaica-green text-dark' : 'bg-dark/50 text-white hover:bg-jamaica-green/20') + 
+                    '" data-genre="all">All</button>'
+                ].concat(
+                    appState.genres.map(genre => 
+                        `<button class="genre-btn px-6 py-3 rounded-full font-semibold transition-all hover:scale-105 ${
+                            appState.currentGenre === genre ? 'bg-jamaica-green text-dark' : 'bg-dark/50 text-white hover:bg-jamaica-green/20'
+                        }" data-genre="${genre}">${genre.charAt(0).toUpperCase() + genre.slice(1)}</button>`
+                    )
+                ).join('');
+                
+                filterContainer.innerHTML = genreButtons;
+                
+                // Add event listeners
+                filterContainer.querySelectorAll('.genre-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        appState.currentGenre = e.target.dataset.genre;
+                        renderGenres();
+                        renderTracks();
+                    });
+                });
+            }
+        }
+
+        // ==========================================================
+        // AUDIO PLAYER
+        // ==========================================================
+        
+        let audioPlayer = {
+            element: null,
+            currentTrack: null,
+            isPlaying: false,
+            volume: 0.8
+        };
+
+        function initializeAudioPlayer() {
+            audioPlayer.element = document.getElementById('mainPlayer');
+            if (!audioPlayer.element) return;
+
+            // Set initial volume
+            audioPlayer.element.volume = audioPlayer.volume;
+            
+            // Event listeners
+            audioPlayer.element.addEventListener('loadstart', () => {
+                console.log('Audio loading started');
+                updatePlayerStatus('Loading...');
+            });
+            
+            audioPlayer.element.addEventListener('canplay', () => {
+                console.log('Audio can play');
+                updatePlayerStatus('');
+            });
+            
+            audioPlayer.element.addEventListener('play', () => {
+                setPlayIcon(true);
+                updatePlayerStatus('Playing');
+            });
+            
+            audioPlayer.element.addEventListener('pause', () => {
+                setPlayIcon(false);
+                updatePlayerStatus('Paused');
+            });
+            
+            audioPlayer.element.addEventListener('ended', () => {
+                setPlayIcon(false);
+                audioPlayer.isPlaying = false;
+                updatePlayerStatus('Ended');
+            });
+            
+            audioPlayer.element.addEventListener('error', (e) => {
+                console.error('Audio error:', e);
+                alert('Failed to load audio. Please try again.');
+                setPlayIcon(false);
+                updatePlayerStatus('Error');
+            });
+        }
+
+        function playTrack(trackId) {
+            const track = appState.tracks.find(t => t.id === trackId);
+            if (!track) {
+                alert('Track not found');
+                return;
+            }
+
+            console.log('Playing track:', track.title);
+            audioPlayer.currentTrack = track;
+            
+            try {
+                audioPlayer.element.src = track.preview;
+                audioPlayer.element.play().then(() => {
+                    audioPlayer.isPlaying = true;
+                    updatePlayerUI(track);
+                    showFloatingPlayer(true);
+                }).catch(error => {
+                    console.error('Play failed:', error);
+                    alert('Failed to play track. Please try again.');
+                });
+            } catch (error) {
+                console.error('Audio setup failed:', error);
+                alert('Failed to setup audio player.');
+            }
+        }
+
+        function updatePlayerUI(track) {
+            const titleEl = document.getElementById('playerTitle');
+            const artEl = document.getElementById('playerArt');
+            
+            if (titleEl) titleEl.textContent = track.title;
+            
+            if (artEl) {
+                artEl.innerHTML = icons[track.artwork] ? 
+                    icons[track.artwork].replace('w-16 h-16', 'w-6 h-6') :
+                    icons['music-note'].replace('w-16 h-16', 'w-6 h-6');
+            }
+        }
+
+        function updatePlayerStatus(status) {
+            const artistEl = document.getElementById('playerArtist');
+            if (artistEl) {
+                artistEl.textContent = status || 'VibeCraft AI';
+            }
+        }
+
+        function setPlayIcon(isPlaying) {
+            const playIcon = document.getElementById('playIcon');
+            if (playIcon) {
+                playIcon.innerHTML = isPlaying ? 
+                    '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6"/></svg>' :
+                    '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.665z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
+            }
+        }
+
+        function showFloatingPlayer(show = true) {
+            const player = document.getElementById('floatingPlayer');
+            if (player) {
+                player.classList.toggle('hidden', !show);
+            }
+        }
+
+        // ==========================================================
+        // CART FUNCTIONALITY
+        // ==========================================================
+        
+        function addToCart(trackId) {
+            const track = appState.tracks.find(t => t.id === trackId);
+            if (!track) {
+                alert('Track not found');
+                return;
+            }
+
+            const existingItem = appState.cart.find(item => 
+                item.type === 'track' && item.id === trackId
+            );
+
+            if (existingItem) {
+                alert('Track already in cart');
+                return;
+            }
+
+            appState.cart.push({
+                id: trackId,
+                type: 'track',
+                title: track.title,
+                price: track.price,
+                metadata: {
+                    genre: track.genre,
+                    bpm: track.bpm,
+                    duration: track.duration
+                }
+            });
+
+            updateCartUI();
+            saveToStorage();
+            alert(`${track.title} added to cart`);
         }
 
         function addBundleToCart(bundleId) {
-            const bundle = bundles.find(b => b.id === bundleId);
-            if (!bundle) return;
-
-            if (!cart.find(item => item.id === bundleId && item.type === 'bundle')) {
-                cart.push({ id: bundleId, type: 'bundle', title: bundle.title, price: bundle.price });
-                saveCart();
-                showNotification(`${bundle.title} added to cart!`);
-                analyticsEvent('add_bundle_to_cart', { bundle_title: bundle.title, price: bundle.price });
-            } else {
-                showNotification('Bundle already in cart!');
+            const bundle = appState.bundles.find(b => b.id === bundleId);
+            if (!bundle) {
+                alert('Bundle not found');
+                return;
             }
+
+            const existingItem = appState.cart.find(item => 
+                item.type === 'bundle' && item.id === bundleId
+            );
+
+            if (existingItem) {
+                alert('Bundle already in cart');
+                return;
+            }
+
+            appState.cart.push({
+                id: bundleId,
+                type: 'bundle',
+                title: bundle.title,
+                price: bundle.price,
+                metadata: {
+                    track_count: bundle.tracks.length,
+                    discount: bundle.discount
+                }
+            });
+
+            updateCartUI();
+            saveToStorage();
+            alert(`${bundle.title} added to cart`);
         }
 
         function removeFromCart(id, type) {
-            cart = cart.filter(item => !(String(item.id) === String(id) && item.type === type));
-            saveCart();
-            renderCart();
+            appState.cart = appState.cart.filter(item => 
+                !(item.id === id && item.type === type)
+            );
+            
+            updateCartUI();
+            saveToStorage();
+            alert('Item removed from cart');
+        }
+
+        function updateCartUI() {
+            const cartCountEl = document.getElementById('cartCount');
+            if (cartCountEl) {
+                cartCountEl.textContent = appState.cart.length;
+            }
         }
 
         function renderCart() {
-            const cartItems = document.getElementById('cartItems');
-            const total = cart.reduce((sum, item) => sum + Number(item.price || 0), 0);
+            const cartItemsEl = document.getElementById('cartItems');
+            const cartTotalEl = document.getElementById('cartTotal');
+            
+            if (!cartItemsEl || !cartTotalEl) return;
 
-            if (cart.length === 0) {
-                cartItems.innerHTML = '<p class="text-gray-500 text-center py-8">Your cart is empty</p>';
-            } else {
-                cartItems.innerHTML = cart.map(item => `
-                    <div class="flex justify-between items-center bg-dark/50 p-4 rounded-xl">
-                        <div>
-                            <p class="font-rajdhani text-white">${escapeHtml(item.title)}</p>
-                            <p class="text-xs text-gray-500 uppercase">${item.type}</p>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <span class="text-jamaica-gold font-orbitron">${formatPrice(item.price)}</span>
-                            <button onclick="removeFromCart('${item.id}', '${item.type}')" class="text-red-500 hover:text-red-400">✕</button>
-                        </div>
+            if (appState.cart.length === 0) {
+                cartItemsEl.innerHTML = `
+                    <div class="text-center py-12">
+                        <svg class="w-16 h-16 text-gray-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 1.5M7 13l1.5 1.5M9 3h6m-6 0h6m2 3v12a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2z"/>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Your cart is empty</h3>
+                        <p class="text-gray-500">Add some beats to get started!</p>
                     </div>
-                `).join('');
+                `;
+                cartTotalEl.textContent = '$0.00';
+                return;
             }
 
-            document.getElementById('cartTotal').textContent = formatPrice(total);
+            const total = appState.cart.reduce((sum, item) => sum + item.price, 0);
+            
+            const cartItems = appState.cart.map(item => `
+                <div class="flex justify-between items-center bg-dark/50 p-4 rounded-xl border border-jamaica-green/20">
+                    <div class="flex-1">
+                        <p class="font-semibold text-white mb-1">${escapeHtml(item.title)}</p>
+                        <p class="text-sm text-gray-500 uppercase">${item.type}</p>
+                        ${item.metadata ? `
+                            <div class="flex gap-2 mt-1">
+                                ${item.metadata.genre ? `<span class="text-xs text-turquoise">${item.metadata.genre}</span>` : ''}
+                                ${item.metadata.bpm ? `<span class="text-xs text-jamaica-gold">${item.metadata.bpm} BPM</span>` : ''}
+                            </div>
+                        ` : ''}
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="font-orbitron text-lg text-jamaica-gold">$${item.price}</span>
+                        <button onclick="removeFromCart(${item.id}, '${item.type}')" 
+                                class="text-red-500 hover:text-red-400 transition-colors p-1 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+                                aria-label="Remove ${item.title} from cart">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
 
-            const itemsList = cart.map(i => `${i.title} (${formatPrice(i.price)})`).join(', ');
-            const whatsappMsg = encodeURIComponent(`Hi! I'd like to purchase: ${itemsList}. Total: ${formatPrice(total)}`);
-            document.getElementById('whatsappCheckout').href = `https://wa.me/1234567890?text=${whatsappMsg}`;
-            document.getElementById('emailCheckout').href = `mailto:orders@VibeCraftai.music?subject=Order Request&body=${encodeURIComponent(`I'd like to purchase:\n${itemsList}\n\nTotal: ${formatPrice(total)}`)}`;
+            cartItemsEl.innerHTML = cartItems;
+            cartTotalEl.textContent = `$${total.toFixed(2)}`;
+
+            // Update checkout links
+            updateCheckoutLinks(total);
         }
 
-        document.getElementById('cartBtn').addEventListener('click', () => {
-            renderCart();
-            document.getElementById('cartModal').classList.remove('hidden');
-        });
+        function updateCheckoutLinks(total) {
+            const whatsappEl = document.getElementById('whatsappCheckout');
+            const emailEl = document.getElementById('emailCheckout');
+            
+            if (!whatsappEl || !emailEl) return;
 
-        document.getElementById('closeCartModal').addEventListener('click', () => {
-            document.getElementById('cartModal').classList.add('hidden');
-        });
+            const itemsList = appState.cart.map(item => 
+                `${item.title} ($${item.price})`
+            ).join(', ');
+
+            const whatsappMessage = encodeURIComponent(
+                `Hi! I'd like to purchase:\n${itemsList}\n\nTotal: $${total.toFixed(2)}`
+            );
+
+            whatsappEl.href = `https://wa.me/${appState.pageContent.whatsappNumber}?text=${whatsappMessage}`;
+            
+            const emailBody = encodeURIComponent(
+                `I'd like to purchase:\n${itemsList}\n\nTotal: $${total.toFixed(2)}`
+            );
+            emailEl.href = `mailto:${appState.pageContent.contactEmail}?subject=Music Purchase&body=${emailBody}`;
+        }
 
         // ==========================================================
-        // SEARCH
+        // ADMIN FUNCTIONALITY
         // ==========================================================
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            currentSearch = e.target.value.trim();
-            renderTracks();
-        });
-
-        // ==========================================================
-        // ADMIN PANEL + CRUD
-        // ==========================================================
-        function toggleAdminPanel() {
+        
+        function toggleAdminPanel(show = null) {
             const panel = document.getElementById('adminPanel');
-            panel.classList.toggle('open');
+            if (!panel) return;
 
-            if (panel.classList.contains('open')) {
+            const isOpen = panel.classList.contains('translate-x-0');
+            const shouldShow = show !== null ? show : !isOpen;
+
+            if (shouldShow) {
+                panel.classList.remove('translate-x-full');
+                panel.classList.add('translate-x-0');
                 renderGenres();
                 renderTrackEditors();
-                setupDragAndDrop();
+                populatePageContentInputs();
+            } else {
+                panel.classList.remove('translate-x-0');
+                panel.classList.add('translate-x-full');
             }
+        }
+
+        function renderTrackEditors() {
+            const container = document.getElementById('trackEditors');
+            if (!container) return;
+
+            const trackEditors = appState.tracks.map(track => `
+                <div class="admin-section bg-dark/50 p-6 rounded-xl border border-jamaica-green/20">
+                    <div class="flex justify-between items-center mb-6">
+                        <h4 class="font-orbitron text-lg text-jamaica-gold">Track ${track.id}: ${escapeHtml(track.title)}</h4>
+                        <button onclick="removeTrack(${track.id})" 
+                                class="text-red-500 hover:text-red-400 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-red-500 rounded px-2 py-1"
+                                aria-label="Remove ${track.title}">
+                            Remove
+                        </button>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Title</label>
+                                <input type="text" 
+                                       value="${escapeHtml(track.title)}" 
+                                       onchange="updateTrackField(${track.id}, 'title', this.value)"
+                                       class="w-full bg-darker/50 border border-jamaica-green/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-jamaica-gold transition-colors"
+                                       aria-label="Track title">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Genre</label>
+                                <select onchange="updateTrackField(${track.id}, 'genre', this.value)"
+                                        class="w-full bg-darker/50 border border-jamaica-green/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-jamaica-gold transition-colors"
+                                        aria-label="Track genre">
+                                    ${appState.genres.map(genre => 
+                                        `<option value="${genre}" ${track.genre === genre ? 'selected' : ''}>
+                                            ${genre.charAt(0).toUpperCase() + genre.slice(1)}
+                                        </option>`
+                                    ).join('')}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Price ($)</label>
+                                <input type="number" 
+                                       step="0.01" 
+                                       value="${Number(track.price).toFixed(2)}" 
+                                       onchange="updateTrackField(${track.id}, 'price', parseFloat(this.value))"
+                                       class="w-full bg-darker/50 border border-jamaica-green/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-jamaica-gold transition-colors"
+                                       aria-label="Track price">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">BPM</label>
+                                <input type="number" 
+                                       value="${track.bpm}" 
+                                       onchange="updateTrackField(${track.id}, 'bpm', parseInt(this.value))"
+                                       class="w-full bg-darker/50 border border-jamaica-green/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-jamaica-gold transition-colors"
+                                       aria-label="Track BPM">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Duration (MM:SS)</label>
+                                <input type="text" 
+                                       value="${track.duration || ''}" 
+                                       onchange="updateTrackField(${track.id}, 'duration', this.value)"
+                                       class="w-full bg-darker/50 border border-jamaica-green/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-jamaica-gold transition-colors"
+                                       placeholder="3:24"
+                                       aria-label="Track duration">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Preview URL</label>
+                                <input type="url" 
+                                       value="${track.preview || ''}" 
+                                       onchange="updateTrackField(${track.id}, 'preview', this.value)"
+                                       class="w-full bg-darker/50 border border-jamaica-green/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-jamaica-gold transition-colors"
+                                       placeholder="https://example.com/audio.mp3"
+                                       aria-label="Preview audio URL">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Tags (comma-separated)</label>
+                            <input type="text" 
+                                   value="${track.tags ? track.tags.join(', ') : ''}" 
+                                   onchange="updateTrackField(${track.id}, 'tags', this.value.split(',').map(tag => tag.trim()).filter(tag => tag))"
+                                   class="w-full bg-darker/50 border border-jamaica-green/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-jamaica-gold transition-colors"
+                                   placeholder="classic, acoustic, jamaica"
+                                   aria-label="Track tags">
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            container.innerHTML = trackEditors;
         }
 
         function updateTrackField(trackId, field, value) {
-            const track = tracks.find(t => t.id === trackId);
+            const track = appState.tracks.find(t => t.id === trackId);
             if (!track) return;
 
-            if (field === 'genre') {
-                value = String(value || '').toLowerCase();
-                if (!genres.includes(value)) {
-                    value = genres[0] || 'reggae';
-                }
+            // Validate input
+            if (field === 'price' && (isNaN(value) || value < 0)) {
+                alert('Invalid price');
+                return;
             }
 
+            if (field === 'bpm' && (isNaN(value) || value < 60 || value > 200)) {
+                alert('BPM must be between 60 and 200');
+                return;
+            }
+
+            if (field === 'title' && !value.trim()) {
+                alert('Title cannot be empty');
+                return;
+            }
+
+            // Update track
             track[field] = value;
 
-            // Always persist small metadata
-            persistMeta({ silent: true });
-
-            // Refresh UI where needed
-            if (['title', 'genre', 'price', 'bpm'].includes(field)) {
-                renderTracks();
-                renderBundles();
-                if (field === 'genre') renderGenres();
-            }
-        }
-
-        async function handleFileUpload(event, trackId, type) {
-            const file = event?.target?.files?.[0];
-            if (!file) return;
-
-            const track = tracks.find(t => t.id === trackId);
-            if (!track) return;
-
-            // Validate
-            if (type === 'artwork' && !file.type.startsWith('image/')) {
-                showNotification('Please select an image file for artwork', 'error');
-                return;
-            }
-            if (type === 'audio' && !file.type.startsWith('audio/')) {
-                showNotification('Please select an audio file', 'error');
-                return;
-            }
-
-            // Recommended max sizes for a browser-stored editor
-            const maxSize = type === 'artwork' ? 3 * 1024 * 1024 : 20 * 1024 * 1024;
-            if (file.size > maxSize) {
-                showNotification(`File too large for in-browser saving. Try under ${type === 'artwork' ? '3MB' : '20MB'}.`, 'error');
-                return;
-            }
-
-            try {
-                if (type === 'artwork') {
-                    await idbPutBlob(artworkKey(trackId), file);
-                    track.hasArtwork = true;
-                    track.artworkName = file.name;
-                    track.artworkType = file.type;
-                    if (track.artworkUrl) URL.revokeObjectURL(track.artworkUrl);
-                    track.artworkUrl = URL.createObjectURL(file);
-                } else {
-                    await idbPutBlob(audioKey(trackId), file);
-                    track.hasAudio = true;
-                    track.audioName = file.name;
-                    track.audioType = file.type;
-                    if (track.audioUrl) URL.revokeObjectURL(track.audioUrl);
-                    track.audioUrl = URL.createObjectURL(file);
-                }
-
-                persistMeta({ silent: true });
-                renderTracks();
-                renderBundles();
-                renderTrackEditors();
-                setupDragAndDrop();
-
-                showNotification(`${type === 'artwork' ? 'Artwork' : 'Audio'} saved!`);
-            } catch (e) {
-                console.error('Upload failed:', e);
-                showNotification('Upload failed. Storage blocked or unavailable.', 'error');
-            }
-        }
-
-        function setupDragAndDrop() {
-            const dropZones = document.querySelectorAll('.drop-zone');
-
-            dropZones.forEach(zone => {
-                zone.addEventListener('dragover', (e) => {
-                    e.preventDefault();
-                    zone.classList.add('drag-over');
-                });
-
-                zone.addEventListener('dragleave', (e) => {
-                    e.preventDefault();
-                    zone.classList.remove('drag-over');
-                });
-
-                zone.addEventListener('drop', (e) => {
-                    e.preventDefault();
-                    zone.classList.remove('drag-over');
-
-                    const trackId = parseInt(zone.dataset.track, 10);
-                    const type = zone.dataset.type;
-                    const files = e.dataTransfer.files;
-
-                    if (files && files.length > 0) {
-                        handleFileUpload({ target: { files } }, trackId, type);
-                    }
-                });
-            });
-        }
-
-        async function clearArtwork(trackId) {
-            const track = tracks.find(t => t.id === trackId);
-            if (!track) return;
-
-            if (!confirm('Remove artwork for this track?')) return;
-
-            try {
-                await idbDelete(artworkKey(trackId));
-            } catch (e) {
-                // ignore
-            }
-
-            if (track.artworkUrl) URL.revokeObjectURL(track.artworkUrl);
-            track.artworkUrl = null;
-            track.hasArtwork = false;
-            track.artworkName = null;
-            track.artworkType = null;
-
-            persistMeta({ silent: true });
-            renderTracks();
-            renderTrackEditors();
-            setupDragAndDrop();
-        }
-
-        async function clearAudio(trackId) {
-            const track = tracks.find(t => t.id === trackId);
-            if (!track) return;
-
-            if (!confirm('Remove uploaded audio for this track?')) return;
-
-            try {
-                await idbDelete(audioKey(trackId));
-            } catch (e) {
-                // ignore
-            }
-
-            if (track.audioUrl) URL.revokeObjectURL(track.audioUrl);
-            track.audioUrl = null;
-            track.hasAudio = false;
-            track.audioName = null;
-            track.audioType = null;
-
-            persistMeta({ silent: true });
-
-            // If currently playing this track, fall back to URL preview
-            if (currentTrack && currentTrack.id === trackId) {
-                mainPlayer.pause();
-                isPlaying = false;
-                setPlayIcon(false);
-            }
-
-            renderTrackEditors();
-            setupDragAndDrop();
-        }
-
-        async function removeTrack(trackId) {
-            if (!confirm('Are you sure you want to remove this track?')) return;
-
-            const idx = tracks.findIndex(t => t.id === trackId);
-            if (idx === -1) return;
-
-            // Remove media
-            try { await idbDelete(artworkKey(trackId)); } catch {}
-            try { await idbDelete(audioKey(trackId)); } catch {}
-
-            const t = tracks[idx];
-            if (t?.artworkUrl) URL.revokeObjectURL(t.artworkUrl);
-            if (t?.audioUrl) URL.revokeObjectURL(t.audioUrl);
-
-            tracks.splice(idx, 1);
-
-            persistMeta({ silent: true });
+            // Auto-save
+            saveToStorage();
+            
+            // Re-render affected components
             renderTracks();
             renderBundles();
-            renderTrackEditors();
-            setupDragAndDrop();
-
-            showNotification('Track removed');
         }
 
         function addNewTrack() {
-            const newId = Math.max(...tracks.map(t => Number(t.id) || 0), 0) + 1;
-            const newTrack = normalizeTrack({
+            const newId = Math.max(...appState.tracks.map(t => t.id), 0) + 1;
+            const newTrack = {
                 id: newId,
-                title: 'New Track',
-                genre: genres[0] || 'reggae',
+                title: `New Track ${newId}`,
+                genre: appState.genres[0] || 'reggae',
                 price: 4.99,
-                bpm: 80,
-                preview: '',
+                bpm: 120,
+                duration: '3:00',
+                preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
                 artwork: 'music-note',
                 color: 'from-jamaica-green to-emerald-800',
-                hasArtwork: false,
-                hasAudio: false
-            });
+                tags: ['new', 'demo']
+            };
 
-            tracks.push(newTrack);
-
-            persistMeta({ silent: true });
+            appState.tracks.push(newTrack);
+            saveToStorage();
             renderTracks();
             renderTrackEditors();
-            setupDragAndDrop();
+            alert('New track added!');
+        }
 
-            showNotification('New track added! Upload artwork/audio + edit details.');
+        function removeTrack(trackId) {
+            if (!confirm('Are you sure you want to remove this track?')) return;
+
+            const trackIndex = appState.tracks.findIndex(t => t.id === trackId);
+            if (trackIndex === -1) return;
+
+            // Remove from tracks
+            appState.tracks.splice(trackIndex, 1);
+            
+            // Remove from bundles
+            appState.bundles.forEach(bundle => {
+                bundle.tracks = bundle.tracks.filter(id => id !== trackId);
+            });
+
+            saveToStorage();
+            renderTracks();
+            renderBundles();
+            renderTrackEditors();
+            alert('Track removed');
         }
 
         function addGenre() {
             const input = document.getElementById('newGenreInput');
-            const genre = String(input.value || '').trim().toLowerCase();
-            if (!genre) return;
-
-            if (genres.includes(genre)) {
-                showNotification('Genre already exists', 'error');
+            const genre = input.value.trim().toLowerCase();
+            
+            if (!genre) {
+                alert('Please enter a genre name');
                 return;
             }
 
-            genres.push(genre);
+            if (appState.genres.includes(genre)) {
+                alert('Genre already exists');
+                return;
+            }
+
+            appState.genres.push(genre);
             input.value = '';
-
-            persistMeta({ silent: true });
+            
+            saveToStorage();
             renderGenres();
             renderTrackEditors();
-            showNotification(`Genre "${genre}" added`);
-        }
-
-        function renameGenre(oldName) {
-            const next = prompt('Rename genre:', oldName);
-            if (next === null) return;
-
-            const newName = String(next).trim().toLowerCase();
-            if (!newName) return;
-
-            if (genres.includes(newName)) {
-                showNotification('That genre already exists', 'error');
-                return;
-            }
-
-            genres = genres.map(g => g === oldName ? newName : g);
-            tracks.forEach(t => {
-                if (t.genre === oldName) t.genre = newName;
-            });
-
-            if (currentGenre === oldName) currentGenre = newName;
-
-            persistMeta({ silent: true });
-            renderGenres();
-            renderTracks();
-            renderTrackEditors();
-            showNotification(`Renamed "${oldName}" → "${newName}"`);
+            alert(`Genre "${genre}" added`);
         }
 
         function removeGenre(genre) {
-            if (!confirm(`Remove genre "${genre}"? Tracks using it will be moved to "${genres[0]}".`)) return;
-
-            const remaining = genres.filter(g => g !== genre);
-            if (remaining.length === 0) {
-                showNotification('You must have at least one genre', 'error');
+            if (appState.genres.length <= 1) {
+                alert('Cannot remove the last genre');
                 return;
             }
 
-            genres = remaining;
-            const fallback = genres[0];
+            if (!confirm(`Remove genre "${genre}"? Tracks using it will be moved to "${appState.genres[0]}".`)) return;
 
-            tracks.forEach(t => {
-                if (t.genre === genre) t.genre = fallback;
+            appState.genres = appState.genres.filter(g => g !== genre);
+            const fallbackGenre = appState.genres[0];
+
+            // Update tracks
+            appState.tracks.forEach(track => {
+                if (track.genre === genre) track.genre = fallbackGenre;
             });
 
-            if (currentGenre === genre) currentGenre = 'all';
+            // Update current filter
+            if (appState.currentGenre === genre) {
+                appState.currentGenre = 'all';
+            }
 
-            persistMeta({ silent: true });
+            saveToStorage();
             renderGenres();
             renderTracks();
             renderTrackEditors();
-            showNotification(`Genre "${genre}" removed`);
+            alert(`Genre "${genre}" removed`);
         }
 
         function saveAllChanges() {
-            // Save meta and close panel if successful
-            const ok = persistMeta({ silent: false });
-            if (!ok) return;
-
-            renderGenres();
-            renderTracks();
-            renderBundles();
-
-            showNotification('All changes saved successfully!');
-            analyticsEvent('save_content', { track_count: tracks.length });
-
-            // Auto-close the admin panel
-            const panel = document.getElementById('adminPanel');
-            panel.classList.remove('open');
-            showNotification('Admin panel closed. Changes saved!');
-        }
-
-        // Admin Login
-        function showAdminLogin() {
-            const password = localStorage.getItem(ADMIN_PASSWORD_KEY);
-            if (!password) {
-                // First time setup
-                const newPassword = prompt('Set admin password:');
-                if (newPassword) {
-                    localStorage.setItem(ADMIN_PASSWORD_KEY, newPassword);
-                    toggleAdminPanel();
-                }
+            const success = saveToStorage();
+            if (success) {
+                alert('All changes saved successfully!');
+                toggleAdminPanel(false);
             } else {
-                // Login
-                const input = prompt('Enter admin password:');
-                if (input === password) {
-                    toggleAdminPanel();
-                } else if (input !== null) {
-                    alert('Incorrect password!');
-                }
+                alert('Failed to save changes.');
             }
         }
 
-        // Page Content Management
-        let pageContent = safeParseJSON(localStorage.getItem('pageContent'), {
-            heroMainTitle: 'VibeCraft',
-            heroSubtitle: 'AI MUSIC',
-            heroDescription: 'Premium AI-Generated Beats • Reggae • Dancehall • Afrobeats • Electronic',
-            aboutTitle: 'ABOUT VibeCraft AI',
-            aboutSubtitle: 'The Future of Caribbean Sound',
-            aboutDesc1: 'VibeCraft AI Music Store brings you the cutting edge of AI-generated Caribbean music. From deep Reggae roots to modern Dancehall vibes, our tracks are crafted using advanced neural networks trained on decades of Caribbean musical heritage.',
-            aboutDesc2: 'Each track is royalty-free and ready for your next project — films, games, podcasts, or personal enjoyment. Experience the future of island sound.',
-            whatsappNumber: '1234567890',
-            contactEmail: 'contact@VibeCraftai.music',
-            footerCopyright: '© 2024 VibeCraft AI Music Store — Jamaica Edition. All rights reserved.',
-            termsText: 'Terms',
-            privacyText: 'Privacy',
-            licensingText: 'Licensing'
-        });
+        // ==========================================================
+        // PAGE CONTENT MANAGEMENT
+        // ==========================================================
+        
+        function applyPageContent() {
+            // Hero section
+            const glitchEl = document.querySelector('.glitch');
+            const neonEl = document.querySelector('.neon-text');
+            const heroDescEl = document.querySelector('#home p');
+            
+            if (glitchEl) glitchEl.textContent = appState.pageContent.heroMainTitle;
+            if (neonEl) neonEl.textContent = appState.pageContent.heroSubtitle;
+            if (heroDescEl) heroDescEl.textContent = appState.pageContent.heroDescription;
+            
+            // Contact links
+            const whatsappLinks = document.querySelectorAll('a[href^="https://wa.me"]');
+            whatsappLinks.forEach(link => {
+                link.href = `https://wa.me/${appState.pageContent.whatsappNumber}`;
+            });
+            
+            const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+            emailLinks.forEach(link => {
+                link.href = `mailto:${appState.pageContent.contactEmail}`;
+            });
+        }
+
+        function populatePageContentInputs() {
+            const heroMainTitle = document.getElementById('heroMainTitle');
+            const heroSubtitle = document.getElementById('heroSubtitle');
+            const heroDescription = document.getElementById('heroDescription');
+            const whatsappNumber = document.getElementById('whatsappNumber');
+            const contactEmail = document.getElementById('contactEmail');
+            
+            if (heroMainTitle) heroMainTitle.value = appState.pageContent.heroMainTitle;
+            if (heroSubtitle) heroSubtitle.value = appState.pageContent.heroSubtitle;
+            if (heroDescription) heroDescription.value = appState.pageContent.heroDescription;
+            if (whatsappNumber) whatsappNumber.value = appState.pageContent.whatsappNumber;
+            if (contactEmail) contactEmail.value = appState.pageContent.contactEmail;
+        }
 
         function updatePageContent(key, value) {
-            pageContent[key] = value;
-            localStorage.setItem('pageContent', JSON.stringify(pageContent));
+            appState.pageContent[key] = value;
+            saveToStorage();
             applyPageContent();
-            showNotification('Page content updated!');
-        }
-
-        function applyPageContent() {
-            // Hero
-            document.querySelector('.glitch').textContent = pageContent.heroMainTitle;
-            document.querySelector('.neon-text').textContent = pageContent.heroSubtitle;
-            document.querySelector('#home p').textContent = pageContent.heroDescription;
-
-            // About
-            document.querySelector('#about h2').innerHTML = pageContent.aboutTitle.replace('VibeCraft AI', '<span class="text-jamaica-green">ABOUT</span> <span class="text-jamaica-gold">VibeCraft AI</span>');
-            document.querySelector('#about h3').textContent = pageContent.aboutSubtitle;
-            document.querySelector('#about p:nth-of-type(1)').textContent = pageContent.aboutDesc1;
-            document.querySelector('#about p:nth-of-type(2)').textContent = pageContent.aboutDesc2;
-
-            // Contact Links
-            document.querySelector('a[href^="https://wa.me"]').href = `https://wa.me/${pageContent.whatsappNumber}`;
-            document.querySelector('a[href^="mailto:"]').href = `mailto:${pageContent.contactEmail}`;
-
-            // Footer
-            document.querySelector('footer p').textContent = pageContent.footerCopyright;
-            document.querySelector('footer a:nth-of-type(1)').textContent = pageContent.termsText;
-            document.querySelector('footer a:nth-of-type(2)').textContent = pageContent.privacyText;
-            document.querySelector('footer a:nth-of-type(3)').textContent = pageContent.licensingText;
-        }
-
-        // Keyboard shortcuts
-        function handleKeydown(e) {
-            if (e.ctrlKey || e.metaKey) {
-                switch (e.key.toLowerCase()) {
-                    case 's':
-                        e.preventDefault();
-                        saveAllChanges();
-                        break;
-                    case 'n':
-                        e.preventDefault();
-                        addNewTrack();
-                        break;
-                }
-            }
         }
 
         // ==========================================================
         // BACKGROUND ANIMATIONS
         // ==========================================================
+        
         function createParticles() {
             const container = document.getElementById('particles');
+            if (!container) return;
+
             container.innerHTML = '';
-            for (let i = 0; i < 30; i++) {
+            
+            const particleCount = Math.min(30, Math.floor(window.innerWidth / 50));
+            
+            for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'waveform-particle';
                 particle.style.left = `${Math.random() * 100}%`;
@@ -2064,8 +1812,13 @@
 
         function createCircuits() {
             const container = document.getElementById('circuits');
+            if (!container) return;
+
             container.innerHTML = '';
-            for (let i = 0; i < 8; i++) {
+            
+            const lineCount = Math.min(8, Math.floor(window.innerWidth / 200));
+            
+            for (let i = 0; i < lineCount; i++) {
                 const line = document.createElement('div');
                 line.className = 'circuit-line';
                 line.style.top = `${10 + Math.random() * 80}%`;
@@ -2076,74 +1829,228 @@
             }
         }
 
-        // 3D Parallax on mouse move
-        document.addEventListener('mousemove', (e) => {
-            const cards = document.querySelectorAll('.parallax-card');
-            const x = (e.clientX / window.innerWidth - 0.5) * 10;
-            const y = (e.clientY / window.innerHeight - 0.5) * 10;
+        // ==========================================================
+        // EVENT LISTENERS
+        // ==========================================================
+        
+        function initializeEventListeners() {
+            // Mobile menu toggle (if needed)
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileNav = document.getElementById('mobileNav');
+            
+            if (mobileMenuToggle && mobileNav) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileNav.classList.toggle('hidden');
+                });
+            }
 
-            cards.forEach(card => {
-                if (!card.matches(':hover')) {
-                    card.style.transform = `perspective(1000px) rotateX(${-y * 0.5}deg) rotateY(${x * 0.5}deg)`;
+            // Search input
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    appState.currentSearch = e.target.value.trim();
+                    renderTracks();
+                });
+            }
+
+            // Cart modal
+            const cartBtn = document.getElementById('cartBtn');
+            const cartModal = document.getElementById('cartModal');
+            const closeCartBtn = document.getElementById('closeCartModal');
+            
+            if (cartBtn && cartModal) {
+                cartBtn.addEventListener('click', () => {
+                    renderCart();
+                    cartModal.classList.remove('hidden');
+                });
+            }
+            
+            if (closeCartBtn && cartModal) {
+                closeCartBtn.addEventListener('click', () => {
+                    cartModal.classList.add('hidden');
+                });
+            }
+
+            // Admin panel
+            const adminToggle = document.getElementById('adminToggle');
+            const adminClose = document.getElementById('closeAdminPanel');
+            
+            if (adminToggle) {
+                adminToggle.addEventListener('click', () => toggleAdminPanel());
+            }
+            
+            if (adminClose) {
+                adminClose.addEventListener('click', () => toggleAdminPanel(false));
+            }
+
+            // Audio player controls
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const volumeSlider = document.getElementById('volumeSlider');
+            const closePlayer = document.getElementById('closePlayer');
+            
+            if (playPauseBtn) {
+                playPauseBtn.addEventListener('click', () => {
+                    if (!audioPlayer.currentTrack) {
+                        alert('Please select a track first');
+                        return;
+                    }
+                    
+                    if (audioPlayer.isPlaying) {
+                        audioPlayer.element.pause();
+                        audioPlayer.isPlaying = false;
+                    } else {
+                        audioPlayer.element.play();
+                        audioPlayer.isPlaying = true;
+                    }
+                });
+            }
+            
+            if (volumeSlider) {
+                volumeSlider.addEventListener('input', (e) => {
+                    const volume = e.target.value / 100;
+                    audioPlayer.element.volume = volume;
+                    audioPlayer.volume = volume;
+                });
+            }
+            
+            if (closePlayer) {
+                closePlayer.addEventListener('click', () => {
+                    audioPlayer.element.pause();
+                    audioPlayer.isPlaying = false;
+                    showFloatingPlayer(false);
+                });
+            }
+
+            // Page content inputs
+            const heroMainTitle = document.getElementById('heroMainTitle');
+            const heroSubtitle = document.getElementById('heroSubtitle');
+            const heroDescription = document.getElementById('heroDescription');
+            const whatsappNumber = document.getElementById('whatsappNumber');
+            const contactEmail = document.getElementById('contactEmail');
+            
+            if (heroMainTitle) {
+                heroMainTitle.addEventListener('input', (e) => {
+                    updatePageContent('heroMainTitle', e.target.value);
+                });
+            }
+            
+            if (heroSubtitle) {
+                heroSubtitle.addEventListener('input', (e) => {
+                    updatePageContent('heroSubtitle', e.target.value);
+                });
+            }
+            
+            if (heroDescription) {
+                heroDescription.addEventListener('input', (e) => {
+                    updatePageContent('heroDescription', e.target.value);
+                });
+            }
+
+            if (whatsappNumber) {
+                whatsappNumber.addEventListener('input', (e) => {
+                    updatePageContent('whatsappNumber', e.target.value);
+                });
+            }
+
+            if (contactEmail) {
+                contactEmail.addEventListener('input', (e) => {
+                    updatePageContent('contactEmail', e.target.value);
+                });
+            }
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                if (e.ctrlKey || e.metaKey) {
+                    switch (e.key.toLowerCase()) {
+                        case 's':
+                            e.preventDefault();
+                            saveAllChanges();
+                            break;
+                        case 'n':
+                            e.preventDefault();
+                            addNewTrack();
+                            break;
+                        case 'k':
+                            e.preventDefault();
+                            const searchInput = document.getElementById('searchInput');
+                            if (searchInput) {
+                                searchInput.focus();
+                                searchInput.select();
+                            }
+                            break;
+                    }
+                }
+                
+                // Escape key handling
+                if (e.key === 'Escape') {
+                    const cartModal = document.getElementById('cartModal');
+                    if (cartModal && !cartModal.classList.contains('hidden')) {
+                        cartModal.classList.add('hidden');
+                    }
                 }
             });
-        });
 
-        // Smooth scroll
-        function scrollTo(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            // Click outside to close modals
+            document.addEventListener('click', (e) => {
+                const cartModal = document.getElementById('cartModal');
+                if (cartModal && e.target === cartModal) {
+                    cartModal.classList.add('hidden');
+                }
+            });
         }
 
         // ==========================================================
-        // INIT
+        // INITIALIZATION
         // ==========================================================
-        document.addEventListener('DOMContentLoaded', () => {
-            (async () => {
-                // Initialize IndexedDB
-                try {
-                    await openFileDB();
-                } catch (e) {
-                    console.warn('IndexedDB initialization failed:', e);
-                }
-
-                // Load saved meta (new) or migrate legacy
-                await migrateLegacyStorageIfNeeded();
-
-                const meta = safeParseJSON(localStorage.getItem(META_KEY), null);
-                if (meta) {
-                    applyMeta(meta);
-                } else {
-                    // first run, save defaults
-                    persistMeta({ silent: true });
-                }
-
-                // Hydrate artwork/audio from IndexedDB into objectURLs
-                try {
-                    await hydrateMediaFromDB();
-                } catch (e) {
-                    console.warn('Media hydration skipped:', e);
-                }
-
-                // Load and apply page content
-                applyPageContent();
-
-                // Render
+        
+        async function initializeApp() {
+            try {
+                console.log('Initializing VibeCraft AI Music Store...');
+                showLoading(true);
+                
+                // Load data from storage
+                loadFromStorage();
+                console.log('Data loaded from storage');
+                
+                // Initialize audio player
+                initializeAudioPlayer();
+                console.log('Audio player initialized');
+                
+                // Initialize event listeners
+                initializeEventListeners();
+                console.log('Event listeners initialized');
+                
+                // Create background animations
+                createParticles();
+                createCircuits();
+                console.log('Background animations created');
+                
+                // Initial render
                 renderGenres();
                 renderTracks();
                 renderBundles();
-                updateCartCount();
-                createParticles();
-                createCircuits();
+                updateCartUI();
+                console.log('Initial render complete');
+                
+                // Apply page content
+                applyPageContent();
+                
+                showLoading(false);
+                console.log('App initialization complete');
+                
+            } catch (error) {
+                console.error('Initialization failed:', error);
+                showLoading(false);
+                alert('Failed to initialize app. Please refresh the page.');
+            }
+        }
 
-                // Volume
-                mainPlayer.volume = 0.8;
-
-                // Keyboard shortcuts
-                document.addEventListener('keydown', handleKeydown);
-
-                analyticsEvent('page_view', { page_title: 'VibeCraft AI Music Store - Jamaica Edition' });
-            })();
-        });
+        // Start the app when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeApp);
+        } else {
+            initializeApp();
+        }
     </script>
 </body>
 </html>
