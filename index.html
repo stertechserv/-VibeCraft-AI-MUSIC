@@ -1,0 +1,2149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeCraft AI Music — Jamaica Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#101015',
+                        darker: '#0a0a0d',
+                        jamaica: {
+                            green: '#00A94F',
+                            gold: '#F6B600',
+                            black: '#111111',
+                        },
+                        turquoise: '#00CED1',
+                        neon: '#00ff88',
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        rajdhani: ['Rajdhani', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Analytics - Replace GA_MEASUREMENT_ID with your actual GA4 ID -->
+    <!-- To disable analytics, replace GA_MEASUREMENT_ID with a dummy value or remove this section -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            background: #101015;
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Particles */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .waveform-particle {
+            position: absolute;
+            width: 3px;
+            background: linear-gradient(to top, transparent, #00A94F, #F6B600);
+            border-radius: 2px;
+            animation: riseParticle 8s infinite ease-in-out;
+            opacity: 0.6;
+        }
+
+        @keyframes riseParticle {
+            0% { transform: translateY(100vh) scaleY(0.5); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-100px) scaleY(1.5); opacity: 0; }
+        }
+
+        /* Neon Circuitry Traces */
+        .circuit-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #00CED1, transparent);
+            height: 1px;
+            animation: circuitFlow 4s infinite linear;
+        }
+
+        @keyframes circuitFlow {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(100vw); opacity: 0; }
+        }
+
+        /* Jamaica Flag Glow */
+        .jamaica-glow {
+            position: relative;
+        }
+        .jamaica-glow::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, #00A94F, #F6B600, #111, #00A94F);
+            animation: flagGlow 6s linear infinite;
+            opacity: 0.3;
+            filter: blur(60px);
+            z-index: -1;
+        }
+
+        @keyframes flagGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Floating Vinyl */
+        .floating-vinyl {
+            animation: floatVinyl 6s ease-in-out infinite;
+        }
+
+        @keyframes floatVinyl {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .vinyl-spin {
+            animation: spinVinyl 4s linear infinite;
+        }
+
+        @keyframes spinVinyl {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Hologram Effect */
+        .hologram-btn {
+            position: relative;
+            background: linear-gradient(135deg, rgba(0,169,79,0.2), rgba(246,182,0,0.2));
+            border: 1px solid rgba(0,206,209,0.5);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .hologram-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0,255,136,0.1), transparent);
+            animation: hologramShine 3s infinite;
+        }
+
+        @keyframes hologramShine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .hologram-btn:hover {
+            border-color: #00ff88;
+            box-shadow: 0 0 30px rgba(0,255,136,0.5), inset 0 0 30px rgba(0,255,136,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Equalizer Bars */
+        .equalizer {
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            height: 60px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0.3;
+            padding: 0 10px;
+        }
+
+        .eq-bar {
+            flex: 1;
+            background: linear-gradient(to top, #00A94F, #F6B600);
+            border-radius: 2px 2px 0 0;
+            animation: eqBounce 0.8s ease-in-out infinite;
+        }
+
+        @keyframes eqBounce {
+            0%, 100% { height: 20%; }
+            50% { height: 100%; }
+        }
+
+        /* 3D Parallax Cards */
+        .parallax-card {
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease;
+        }
+
+        .parallax-card:hover {
+            transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateZ(20px);
+        }
+
+        /* Hologram Lines */
+        .holo-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0,206,209,0.03) 2px,
+                rgba(0,206,209,0.03) 4px
+            );
+            pointer-events: none;
+            animation: holoScan 2s linear infinite;
+        }
+
+        @keyframes holoScan {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(4px); }
+        }
+
+        /* Floating Player */
+        .floating-player {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            background: rgba(16,16,21,0.95);
+            border: 1px solid rgba(0,206,209,0.3);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5), 0 0 60px rgba(0,169,79,0.2);
+        }
+
+        /* Audio Player Custom */
+        audio::-webkit-media-controls-panel {
+            background: linear-gradient(135deg, #1a1a1f, #0a0a0d);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #101015; }
+        ::-webkit-scrollbar-thumb { 
+            background: linear-gradient(#00A94F, #F6B600); 
+            border-radius: 4px;
+        }
+
+        /* Glitch Text */
+        .glitch {
+            position: relative;
+            animation: glitch 2s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 90%, 100% { transform: translate(0); }
+            92% { transform: translate(-2px, 2px); }
+            94% { transform: translate(2px, -2px); }
+            96% { transform: translate(-2px, -2px); }
+            98% { transform: translate(2px, 2px); }
+        }
+
+        /* Neon Text */
+        .neon-text {
+            text-shadow: 
+                0 0 10px currentColor,
+                0 0 20px currentColor,
+                0 0 40px currentColor;
+        }
+
+        /* Track Card Hover */
+        .track-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .track-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(246,182,0,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .track-card:hover::before {
+            left: 100%;
+        }
+
+        .track-card:hover {
+            box-shadow: 0 20px 60px rgba(0,169,79,0.3), 0 0 30px rgba(246,182,0,0.2);
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .floating-player {
+                width: 95%;
+                padding: 10px 15px;
+                gap: 10px;
+                bottom: 10px;
+            }
+            .parallax-card:hover {
+                transform: none;
+            }
+        }
+
+        /* Fade In Animation */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Pulse Ring */
+        .pulse-ring {
+            animation: pulseRing 2s infinite;
+        }
+
+        @keyframes pulseRing {
+            0% { box-shadow: 0 0 0 0 rgba(0,169,79,0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(0,169,79,0); }
+            100% { box-shadow: 0 0 0 0 rgba(0,169,79,0); }
+        }
+
+        /* Drag and Drop Styles */
+        .drop-zone {
+            border: 2px dashed rgba(0,206,209,0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .drop-zone.drag-over {
+            border-color: #00CED1;
+            background: rgba(0,206,209,0.05);
+            box-shadow: 0 0 20px rgba(0,206,209,0.3);
+        }
+
+        .drop-zone::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,206,209,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .drop-zone.drag-over::before {
+            left: 100%;
+        }
+
+        .drop-zone input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .drop-content {
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Admin Panel */
+        .admin-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: rgba(10,10,13,0.98);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid rgba(0,169,79,0.3);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .admin-panel.open {
+            right: 0;
+        }
+
+        .admin-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 1001;
+            background: rgba(0,169,79,0.2);
+            border: 1px solid rgba(0,169,79,0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .admin-toggle:hover {
+            background: rgba(0,169,79,0.3);
+            border-color: #00A94F;
+            transform: scale(1.1);
+        }
+
+        .track-editor {
+            background: rgba(16,16,21,0.5);
+            border: 1px solid rgba(0,206,209,0.2);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .save-all-btn {
+            background: linear-gradient(135deg, #00A94F, #F6B600);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .save-all-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,169,79,0.3);
+        }
+
+        /* Mobile Admin Panel */
+        @media (max-width: 768px) {
+            .admin-panel {
+                width: 100vw;
+                right: -100vw;
+            }
+        }
+    </style>
+</head>
+<body class="text-white min-h-screen">
+    <!-- Animated Background Particles -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Circuit Lines -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0" id="circuits"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-xl border-b border-jamaica-green/20">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-jamaica-green via-jamaica-gold to-jamaica-black flex items-center justify-center vinyl-spin">
+                    <div class="w-3 h-3 rounded-full bg-dark"></div>
+                </div>
+                <h1 class="font-orbitron text-xl md:text-2xl font-bold">
+                    <span class="text-jamaica-green">VibeCraft</span>
+                    <span class="text-jamaica-gold">AI</span>
+                </h1>
+            </div>
+            <nav class="hidden md:flex items-center gap-6 font-rajdhani text-sm uppercase tracking-wider">
+                <a href="#home" class="hover:text-jamaica-gold transition-colors">Home</a>
+                <a href="#tracks" class="hover:text-jamaica-gold transition-colors">Tracks</a>
+                <a href="#bundles" class="hover:text-jamaica-gold transition-colors">Bundles</a>
+                <a href="#about" class="hover:text-jamaica-gold transition-colors">About</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <div class="relative hidden md:block">
+                    <input type="text" id="searchInput" placeholder="Search tracks..." 
+                        class="bg-darker border border-jamaica-green/30 rounded-full px-4 py-2 pl-10 text-sm focus:outline-none focus:border-jamaica-gold w-48 transition-all focus:w-64">
+                    <span class="absolute left-3 top-2.5 text-jamaica-green">🔍</span>
+                </div>
+                <button id="cartBtn" class="hologram-btn px-4 py-2 rounded-full font-rajdhani text-sm flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 1.5M7 13l1.5 1.5M9 3h6m-6 0h6m2 3v12a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2z"></path></svg>
+                    <span id="cartCount" class="text-jamaica-gold">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="holo-lines"></div>
+        
+        <!-- Floating Vinyls -->
+        <div class="absolute top-20 left-10 floating-vinyl opacity-20">
+            <svg width="120" height="120" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="48" fill="none" stroke="url(#vinylGrad)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="35" fill="none" stroke="#F6B600" stroke-width="0.5" opacity="0.5"/>
+                <circle cx="50" cy="50" r="25" fill="none" stroke="#00A94F" stroke-width="0.5" opacity="0.5"/>
+                <circle cx="50" cy="50" r="15" fill="none" stroke="#00CED1" stroke-width="0.5" opacity="0.5"/>
+                <circle cx="50" cy="50" r="5" fill="#F6B600"/>
+                <defs>
+                    <linearGradient id="vinylGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00A94F"/>
+                        <stop offset="50%" stop-color="#F6B600"/>
+                        <stop offset="100%" stop-color="#00CED1"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="absolute bottom-40 right-20 floating-vinyl opacity-20" style="animation-delay: -3s;">
+            <svg width="80" height="80" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="48" fill="none" stroke="url(#vinylGrad)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="5" fill="#00A94F"/>
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="jamaica-glow inline-block mb-8">
+                <h2 class="font-orbitron text-5xl md:text-7xl lg:text-8xl font-black mb-4">
+                    <span class="text-jamaica-green glitch">VibeCraft</span><br>
+                    <span class="text-jamaica-gold neon-text">AI MUSIC</span><br>
+                    <span class="text-turquoise text-3xl md:text-5xl">JAMAICA EDITION</span>
+                </h2>
+            </div>
+            <p id="heroDescription" class="text-xl md:text-2xl text-gray-400 mb-8 font-rajdhani max-w-2xl mx-auto">
+                Premium AI-Generated Beats • Reggae • Dancehall • Afrobeats • Electronic
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="scrollTo('tracks')" class="hologram-btn px-8 py-4 rounded-full font-orbitron text-jamaica-gold hover:text-white transition-colors pulse-ring flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm8-14v6a2 2 0 002 2h2M9 19l3-3m0 0l3 3m-3-3v12"></path></svg>
+                    EXPLORE TRACKS
+                </button>
+                <button onclick="scrollTo('bundles')" class="hologram-btn px-8 py-4 rounded-full font-orbitron text-jamaica-green hover:text-white transition-colors flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    VIEW BUNDLES
+                </button>
+            </div>
+            
+            <!-- Jamaica Flag Animation -->
+            <div class="mt-16 flex justify-center gap-2">
+                <div class="w-16 h-10 bg-jamaica-green rounded-sm animate-pulse"></div>
+                <div class="w-16 h-10 bg-jamaica-gold rounded-sm animate-pulse" style="animation-delay: 0.2s;"></div>
+                <div class="w-16 h-10 bg-jamaica-black border border-gray-700 rounded-sm animate-pulse" style="animation-delay: 0.4s;"></div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-jamaica-gold rounded-full flex justify-center pt-2">
+                <div class="w-1 h-3 bg-jamaica-gold rounded-full animate-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tracks Section -->
+    <section id="tracks" class="py-20 relative">
+        <div class="holo-lines opacity-50"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="font-orbitron text-4xl md:text-5xl text-center mb-4">
+                <span class="text-jamaica-gold">FEATURED</span> <span class="text-jamaica-green">TRACKS</span>
+            </h2>
+            <p class="text-gray-500 text-center mb-12 font-rajdhani text-lg">AI-Generated Premium Beats</p>
+            
+            <!-- Genre Filters -->
+            <div id="genreFilters" class="flex flex-wrap justify-center gap-3 mb-12">
+                <!-- populated by JS -->
+            </div>
+
+            <div id="tracksGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tracks populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Bundles Section -->
+    <section id="bundles" class="py-20 bg-darker relative">
+        <div class="holo-lines opacity-30"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="font-orbitron text-4xl md:text-5xl text-center mb-4">
+                <span class="text-turquoise">TRACK</span> <span class="text-jamaica-gold">BUNDLES</span>
+            </h2>
+            <p class="text-gray-500 text-center mb-12 font-rajdhani text-lg">Save More with Curated Collections</p>
+            
+            <div id="bundlesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Bundles populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="holo-lines opacity-30"></div>
+        <div class="container mx-auto px-4 max-w-4xl relative z-10">
+            <h2 class="font-orbitron text-4xl md:text-5xl text-center mb-12" id="aboutTitle">
+                <!-- Dynamic content applied by JS -->
+            </h2>
+            
+            <div class="parallax-card bg-darker/80 border border-jamaica-green/20 rounded-2xl p-8 md:p-12 backdrop-blur-xl">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-48 h-48 rounded-full bg-gradient-to-br from-jamaica-green via-jamaica-gold to-turquoise p-1 floating-vinyl flex-shrink-0">
+                        <div class="w-full h-full rounded-full bg-dark flex items-center justify-center">
+                            <span class="text-6xl">🎧</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-orbitron text-2xl text-jamaica-gold mb-4" id="aboutSubtitle">
+                            <!-- Dynamic content applied by JS -->
+                        </h3>
+                        <p class="text-gray-400 font-rajdhani text-lg mb-4" id="aboutDesc1">
+                            <!-- Dynamic content applied by JS -->
+                        </p>
+                        <p class="text-gray-400 font-rajdhani text-lg" id="aboutDesc2">
+                            <!-- Dynamic content applied by JS -->
+                        </p>
+                        <div class="flex gap-4 mt-6">
+                            <a id="whatsappLink" href="#" class="hologram-btn px-6 py-3 rounded-full text-sm font-rajdhani flex items-center gap-2">
+                                <span>💬</span> WhatsApp Us
+                            </a>
+                            <a id="emailLink" href="#" class="hologram-btn px-6 py-3 rounded-full text-sm font-rajdhani flex items-center gap-2">
+                                <span>📧</span> Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Music Player -->
+    <div id="floatingPlayer" class="floating-player hidden">
+        <div class="flex items-center gap-3">
+            <div id="playerArt" class="w-12 h-12 rounded-lg bg-gradient-to-br from-jamaica-green to-jamaica-gold flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm8-14v6a2 2 0 002 2h2M9 19l3-3m0 0l3 3m-3-3v12"></path></svg>
+            </div>
+            <div class="hidden sm:block">
+                <p id="playerTitle" class="font-rajdhani text-sm text-white truncate max-w-[150px]">No track selected</p>
+                <p id="playerArtist" class="text-xs text-gray-500">VibeCraft AI</p>
+            </div>
+        </div>
+        <audio id="mainPlayer" class="w-32 sm:w-48"></audio>
+        <div class="flex items-center gap-2">
+            <button id="playPauseBtn" class="w-10 h-10 rounded-full bg-jamaica-gold text-dark flex items-center justify-center hover:bg-jamaica-green transition-colors">
+                <span id="playIcon">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.665z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </span>
+            </button>
+            <input type="range" id="volumeSlider" min="0" max="100" value="80" class="w-16 hidden sm:block accent-jamaica-gold">
+        </div>
+        <button id="closePlayer" class="text-gray-500 hover:text-white ml-2">✕</button>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-darker border border-jamaica-green/30 rounded-2xl max-w-lg w-full max-h-[80vh] overflow-auto">
+            <div class="p-6 border-b border-jamaica-green/20">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-orbitron text-2xl text-jamaica-gold">Your Cart</h3>
+                    <button id="closeCartModal" class="text-gray-500 hover:text-white text-2xl">✕</button>
+                </div>
+            </div>
+            <div id="cartItems" class="p-6 space-y-4">
+                <!-- Cart items here -->
+            </div>
+            <div class="p-6 border-t border-jamaica-green/20">
+                <div class="flex justify-between mb-4">
+                    <span class="text-gray-400">Total:</span>
+                    <span id="cartTotal" class="font-orbitron text-2xl text-jamaica-gold">$0.00</span>
+                </div>
+                <div class="space-y-3">
+                    <a id="stripeCheckout" href="#" class="hologram-btn block text-center px-6 py-4 rounded-xl font-rajdhani text-lg flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                        Pay with Stripe
+                    </a>
+                    <a id="gumroadCheckout" href="https://gumroad.com/l/yourstoreid" target="_blank" class="hologram-btn block text-center px-6 py-4 rounded-xl font-rajdhani text-lg flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 1.5M7 13l1.5 1.5M9 3h6m-6 0h6m2 3v12a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2z"></path></svg>
+                        Buy on Gumroad
+                    </a>
+                    <a id="whatsappCheckout" href="#" class="hologram-btn block text-center px-6 py-4 rounded-xl font-rajdhani text-lg bg-green-600/20 border-green-500/50 flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                        Order via WhatsApp
+                    </a>
+                    <a id="emailCheckout" href="#" class="hologram-btn block text-center px-6 py-4 rounded-xl font-rajdhani text-lg flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        Order via Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel Toggle -->
+    <div class="admin-toggle" onclick="showAdminLogin()" title="Content Manager">
+        <svg class="w-6 h-6 text-jamaica-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+        </svg>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="font-orbitron text-2xl text-jamaica-gold">Content Manager</h2>
+                <button onclick="toggleAdminPanel()" class="text-gray-500 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="mb-6">
+                <p class="text-gray-400 text-sm mb-4">
+                    Upload your music files and artwork using drag & drop. Changes are saved automatically.
+                </p>
+                <p class="text-gray-500 text-xs">
+                    Note: For reliability across browsers (including Edge), uploads are stored in IndexedDB (not localStorage).
+                </p>
+            </div>
+
+            <!-- Genre Management -->
+            <div class="track-editor mb-6">
+                <h3 class="font-orbitron text-lg text-jamaica-gold mb-4">Genre Management</h3>
+                <div class="space-y-4">
+                    <div class="flex gap-2">
+                        <input type="text" id="newGenreInput" placeholder="Add new genre..."
+                               class="flex-1 bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                        <button onclick="addGenre()" class="hologram-btn px-4 py-2 rounded-lg text-sm font-rajdhani">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="genresList" class="space-y-2">
+                        <!-- Genres populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Content Editor -->
+            <div class="track-editor mb-6">
+                <h3 class="font-orbitron text-lg text-jamaica-gold mb-4">Page Content Editor</h3>
+                <div class="space-y-4">
+                    <!-- Hero Section -->
+                    <div class="bg-darker/50 p-4 rounded-lg">
+                        <h4 class="text-jamaica-green font-semibold mb-3">Hero Section</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Main Title (e.g., VibeCraft)</label>
+                                <input type="text" id="heroMainTitle" value="" onchange="updatePageContent('heroMainTitle', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Subtitle (e.g., AI MUSIC)</label>
+                                <input type="text" id="heroSubtitle" value="" onchange="updatePageContent('heroSubtitle', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm text-gray-400 mb-2">Description</label>
+                                <textarea id="heroDescription" rows="3" onchange="updatePageContent('heroDescription', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About Section -->
+                    <div class="bg-darker/50 p-4 rounded-lg">
+                        <h4 class="text-jamaica-green font-semibold mb-3">About Section</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">About Title</label>
+                                <input type="text" id="aboutTitleInput" value="" onchange="updatePageContent('aboutTitle', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">About Subtitle</label>
+                                <input type="text" id="aboutSubtitleInput" value="" onchange="updatePageContent('aboutSubtitle', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm text-gray-400 mb-2">Description 1</label>
+                                <textarea id="aboutDesc1Input" rows="2" onchange="updatePageContent('aboutDesc1', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold"></textarea>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm text-gray-400 mb-2">Description 2</label>
+                                <textarea id="aboutDesc2Input" rows="2" onchange="updatePageContent('aboutDesc2', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold"></textarea>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm text-gray-400 mb-2">WhatsApp Number (e.g., 1234567890)</label>
+                                    <input type="text" id="whatsappNumberInput" value="" onchange="updatePageContent('whatsappNumber', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-gray-400 mb-2">Contact Email</label>
+                                    <input type="text" id="contactEmailInput" value="" onchange="updatePageContent('contactEmail', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer Section -->
+                    <div class="bg-darker/50 p-4 rounded-lg">
+                        <h4 class="text-jamaica-green font-semibold mb-3">Footer</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Copyright Text</label>
+                                <input type="text" id="footerCopyrightInput" value="" onchange="updatePageContent('footerCopyright', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Terms Link Text</label>
+                                <input type="text" id="termsTextInput" value="" onchange="updatePageContent('termsText', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Privacy Link Text</label>
+                                <input type="text" id="privacyTextInput" value="" onchange="updatePageContent('privacyText', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Licensing Link Text</label>
+                                <input type="text" id="licensingTextInput" value="" onchange="updatePageContent('licensingText', this.value)" class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track Editors -->
+            <div id="trackEditors" class="space-y-4">
+                <!-- Track editors populated by JS -->
+            </div>
+
+            <button onclick="addNewTrack()" class="hologram-btn mt-4 px-4 py-2 rounded-lg text-sm font-rajdhani bg-jamaica-gold/20 border-jamaica-gold/50 flex items-center gap-2 justify-center">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                </svg>
+                Add New Track
+            </button>
+
+            <button onclick="saveAllChanges()" class="save-all-btn mt-6">
+                <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3-3m0 0l-3 3m3-3v12"></path>
+                </svg>
+                Save All Changes
+            </button>
+
+            <div class="mt-6 p-4 bg-darker/50 rounded-lg border border-jamaica-green/20">
+                <h3 class="font-rajdhani text-jamaica-green font-semibold mb-2">💡 Quick Tips:</h3>
+                <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• Drag & drop files directly onto a track’s artwork/audio area</li>
+                    <li>• Ctrl+S saves + closes this panel</li>
+                    <li>• Ctrl+N adds a new track</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-darker py-12 border-t border-jamaica-green/20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-jamaica-green via-jamaica-gold to-jamaica-black flex items-center justify-center vinyl-spin">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    </div>
+                    <span class="font-orbitron text-xl" id="footerBrand">
+                        <!-- Dynamic content applied by JS -->
+                    </span>
+                </div>
+                <div class="flex gap-6 text-gray-500">
+                    <a id="termsLink" href="#" class="hover:text-jamaica-gold transition-colors">
+                        <!-- Dynamic content applied by JS -->
+                    </a>
+                    <a id="privacyLink" href="#" class="hover:text-jamaica-gold transition-colors">
+                        <!-- Dynamic content applied by JS -->
+                    </a>
+                    <a id="licensingLink" href="#" class="hover:text-jamaica-gold transition-colors">
+                        <!-- Dynamic content applied by JS -->
+                    </a>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-6 h-4 bg-jamaica-green rounded-sm"></div>
+                    <div class="w-6 h-4 bg-jamaica-gold rounded-sm"></div>
+                    <div class="w-6 h-4 bg-jamaica-black border border-gray-700 rounded-sm"></div>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 mt-8 font-rajdhani" id="footerCopyright">
+                <!-- Dynamic content applied by JS -->
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ==========================================================
+        // STORAGE + DATA MODEL
+        // ==========================================================
+        // Why Edge was failing:
+        // - localStorage is typically ~5MB. Storing audio as base64 quickly exceeds quota,
+        //   causing Save All to fail and data to disappear on refresh.
+        // Fix:
+        // - Store *metadata* (tracks/bundles/genres) in localStorage (small)
+        // - Store *files* (artwork/audio blobs) in IndexedDB (large + Edge compatible)
+
+        const META_KEY = 'VibeCraftMusicMeta_v2';
+        const LEGACY_KEY = 'VibeCraftMusicData';
+        const CART_KEY = 'VibeCraftCart';
+        const ADMIN_PASSWORD_KEY = 'VibeCraftAdminPassword';
+
+        const FILE_DB_NAME = 'VibeCraftMusicFiles';
+        const FILE_DB_VERSION = 1;
+        const FILE_STORE = 'files';
+
+        const DEFAULT_GENRES = ['reggae', 'dancehall', 'afrobeats', 'electronic'];
+
+        const DEFAULT_TRACKS = [
+            { id: 1, title: 'Roots Revival', genre: 'reggae', price: 4.99, bpm: 78, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', artwork: 'music-note', color: 'from-jamaica-green to-emerald-800' },
+            { id: 2, title: 'Kingston Nights', genre: 'dancehall', price: 5.99, bpm: 95, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3', artwork: 'speaker-wave', color: 'from-jamaica-gold to-amber-700' },
+            { id: 3, title: 'Digital Jah', genre: 'electronic', price: 3.99, bpm: 128, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3', artwork: 'bolt', color: 'from-turquoise to-cyan-800' },
+            { id: 4, title: 'Lagos to Kingston', genre: 'afrobeats', price: 5.49, bpm: 105, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3', artwork: 'globe-alt', color: 'from-orange-500 to-red-700' },
+            { id: 5, title: 'Dub Frequency', genre: 'reggae', price: 4.49, bpm: 72, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3', artwork: 'radio', color: 'from-jamaica-green to-teal-800' },
+            { id: 6, title: 'Cyber Yard', genre: 'dancehall', price: 6.99, bpm: 100, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3', artwork: 'fire', color: 'from-purple-600 to-pink-700' },
+            { id: 7, title: 'Island Algorithm', genre: 'electronic', price: 4.99, bpm: 140, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3', artwork: 'cpu-chip', color: 'from-blue-500 to-indigo-800' },
+            { id: 8, title: 'Accra Bounce', genre: 'afrobeats', price: 5.99, bpm: 110, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3', artwork: 'musical-note', color: 'from-yellow-500 to-orange-600' },
+            { id: 9, title: 'Zion Train', genre: 'reggae', price: 4.99, bpm: 80, preview: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3', artwork: 'train', color: 'from-green-600 to-emerald-900' },
+        ];
+
+        const DEFAULT_BUNDLES = [
+            { id: 'b1', title: 'Reggae Essentials', tracks: [1, 5, 9], price: 9.99, discount: '33% OFF', artwork: 'guitar', color: 'from-jamaica-green to-emerald-900' },
+            { id: 'b2', title: 'Dancehall Fire', tracks: [2, 6], price: 9.99, discount: '25% OFF', artwork: 'volume-up', color: 'from-jamaica-gold to-orange-700' },
+            { id: 'b3', title: 'Caribbean Fusion', tracks: [1, 2, 4, 8], price: 14.99, discount: '40% OFF', artwork: 'palm-tree', color: 'from-turquoise to-blue-800' },
+            { id: 'b4', title: 'AI Producer Pack', tracks: [3, 7], price: 6.99, discount: '30% OFF', artwork: 'disc', color: 'from-purple-600 to-indigo-900' },
+        ];
+
+        function deepClone(obj) {
+            return JSON.parse(JSON.stringify(obj));
+        }
+
+        let genres = [...DEFAULT_GENRES];
+        let tracks = deepClone(DEFAULT_TRACKS);
+        let bundles = deepClone(DEFAULT_BUNDLES);
+
+        // Runtime-only fields will be attached to track objects:
+        // track.artworkUrl (objectURL), track.audioUrl (objectURL)
+
+        // ==========================================================
+        // ICONS
+        // ==========================================================
+        const icons = {
+            'music-note': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm8-14v6a2 2 0 002 2h2M9 19l3-3m0 0l3 3m-3-3v12"></path></svg>',
+            'speaker-wave': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>',
+            'bolt': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>',
+            'globe-alt': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>',
+            'radio': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18.53.02 19.47A13.949 13.949 0 0112 20c7.2 0 13-5.8 13-13S19.2 0 12 0a13.95 13.95 0 00-11.98 6.47M12 18.53l6.47-1.06"></path></svg>',
+            'fire': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2c2.5 3 4 5.5 4 8a4 4 0 11-8 0c0-2.5 1.5-5 4-8z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14c-2 2-2 6 4 8 6-2 6-6 4-8"></path></svg>',
+            'cpu-chip': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>',
+            'musical-note': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm8-14v6a2 2 0 002 2h2"></path></svg>',
+            'train': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 16V8a4 4 0 014-4h6a4 4 0 014 4v8a3 3 0 01-3 3H8a3 3 0 01-3-3z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 19l-2 3m14-3l2 3"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11h.01M16 11h.01"></path></svg>',
+            'guitar': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3l7 7-2 2-2-2-2 2 2 2-2 2-2-2-2 2 2 2-2 2-7-7 2-2 2 2 2-2-2-2 2-2 2 2 2-2-2-2 2-2z"></path></svg>',
+            'volume-up': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5L6 9H3v6h3l5 4V5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 9a4 4 0 010 6m2-9a7 7 0 010 12"></path></svg>',
+            'palm-tree': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22v-9"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10c-2-1-4-1-6 0 1-3 3-5 6-5"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 10c2-1 4-1 6 0-1-3-3-5-6-5"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9c0-4 1-7 3-7s3 3 3 7"></path></svg>',
+            'disc': '<svg class="w-16 h-16 text-white opacity-85" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="2"/><circle cx="12" cy="12" r="2" stroke-width="2"/></svg>'
+        };
+
+        // ==========================================================
+        // INDEXEDDB HELPERS
+        // ==========================================================
+        let _fileDB = null;
+
+        function openFileDB() {
+            if (!('indexedDB' in window)) {
+                return Promise.reject(new Error('IndexedDB not supported'));
+            }
+
+            if (_fileDB) return Promise.resolve(_fileDB);
+
+            return new Promise((resolve, reject) => {
+                const req = indexedDB.open(FILE_DB_NAME, FILE_DB_VERSION);
+
+                req.onupgradeneeded = () => {
+                    const db = req.result;
+                    if (!db.objectStoreNames.contains(FILE_STORE)) {
+                        db.createObjectStore(FILE_STORE);
+                    }
+                };
+
+                req.onsuccess = () => {
+                    _fileDB = req.result;
+                    resolve(_fileDB);
+                };
+
+                req.onerror = () => reject(req.error);
+            });
+        }
+
+        async function idbPutBlob(key, blob) {
+            const db = await openFileDB();
+            return new Promise((resolve, reject) => {
+                const tx = db.transaction(FILE_STORE, 'readwrite');
+                tx.objectStore(FILE_STORE).put(blob, key);
+                tx.oncomplete = () => resolve(true);
+                tx.onerror = () => reject(tx.error);
+            });
+        }
+
+        async function idbGetBlob(key) {
+            const db = await openFileDB();
+            return new Promise((resolve, reject) => {
+                const tx = db.transaction(FILE_STORE, 'readonly');
+                const req = tx.objectStore(FILE_STORE).get(key);
+                req.onsuccess = () => resolve(req.result || null);
+                req.onerror = () => reject(req.error);
+            });
+        }
+
+        async function idbDelete(key) {
+            const db = await openFileDB();
+            return new Promise((resolve, reject) => {
+                const tx = db.transaction(FILE_STORE, 'readwrite');
+                tx.objectStore(FILE_STORE).delete(key);
+                tx.oncomplete = () => resolve(true);
+                tx.onerror = () => reject(tx.error);
+            });
+        }
+
+        function artworkKey(trackId) {
+            return `artwork:${trackId}`;
+        }
+
+        function audioKey(trackId) {
+            return `audio:${trackId}`;
+        }
+
+        async function dataUrlToBlob(dataUrl) {
+            const res = await fetch(dataUrl);
+            return await res.blob();
+        }
+
+        // ==========================================================
+        // STATE
+        // ==========================================================
+        let cart = safeParseJSON(localStorage.getItem(CART_KEY), []) || [];
+        let currentTrack = null;
+        let isPlaying = false;
+        let currentGenre = 'all';
+        let currentSearch = '';
+
+        // ==========================================================
+        // DOM ELEMENTS
+        // ==========================================================
+        const mainPlayer = document.getElementById('mainPlayer');
+        const floatingPlayer = document.getElementById('floatingPlayer');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playIcon = document.getElementById('playIcon');
+        const volumeSlider = document.getElementById('volumeSlider');
+
+        // ==========================================================
+        // UTIL
+        // ==========================================================
+        function safeParseJSON(str, fallback) {
+            try {
+                return JSON.parse(str);
+            } catch {
+                return fallback;
+            }
+        }
+
+        function analyticsEvent(name, params = {}) {
+            try {
+                if (typeof window.gtag === 'function') window.gtag('event', name, params);
+            } catch (e) {
+                // ignore analytics failures
+            }
+        }
+
+        function showNotification(msg, tone = 'success') {
+            const notif = document.createElement('div');
+            notif.className = `fixed top-24 right-4 ${tone === 'error' ? 'bg-red-600' : 'bg-jamaica-green'} text-white px-6 py-3 rounded-xl font-rajdhani z-50`;
+            notif.textContent = msg;
+            document.body.appendChild(notif);
+            setTimeout(() => notif.remove(), 2500);
+        }
+
+        function formatPrice(value) {
+            const num = Number(value);
+            if (Number.isFinite(num)) return `$${num.toFixed(2)}`;
+            return '$0.00';
+        }
+
+        // ==========================================================
+        // PERSISTENCE (meta in localStorage)
+        // ==========================================================
+        function stripRuntimeTrackFields(track) {
+            const t = { ...track };
+            delete t.artworkUrl;
+            delete t.audioUrl;
+            // Legacy fields that could blow up storage
+            delete t.artworkData;
+            delete t.previewData;
+            return t;
+        }
+
+        function persistMeta({ silent = false } = {}) {
+            const payload = {
+                schema: 2,
+                updatedAt: Date.now(),
+                genres,
+                tracks: tracks.map(stripRuntimeTrackFields),
+                bundles: bundles
+            };
+
+            try {
+                localStorage.setItem(META_KEY, JSON.stringify(payload));
+                return true;
+            } catch (e) {
+                console.warn('Meta save failed:', e);
+                if (!silent) showNotification('Save failed: browser storage blocked/full.', 'error');
+                return false;
+            }
+        }
+
+        function applyMeta(meta) {
+            if (!meta || typeof meta !== 'object') return;
+
+            if (Array.isArray(meta.genres) && meta.genres.length) {
+                genres = meta.genres.map(g => String(g).trim().toLowerCase()).filter(Boolean);
+            }
+
+            if (Array.isArray(meta.tracks)) {
+                tracks.splice(0, tracks.length, ...meta.tracks.map(normalizeTrack));
+            }
+
+            if (Array.isArray(meta.bundles)) {
+                bundles.splice(0, bundles.length, ...meta.bundles);
+            }
+        }
+
+        function normalizeTrack(t) {
+            const track = { ...t };
+            track.id = Number(track.id);
+            track.title = String(track.title || 'Untitled Track');
+            track.genre = String(track.genre || (genres[0] || 'reggae')).toLowerCase();
+            track.price = Number(track.price ?? 0);
+            track.bpm = parseInt(track.bpm ?? 0, 10) || 0;
+            track.preview = String(track.preview || '');
+            track.artwork = String(track.artwork || 'music-note');
+            track.color = String(track.color || 'from-jamaica-green to-emerald-800');
+
+            // File flags
+            track.hasArtwork = !!track.hasArtwork;
+            track.hasAudio = !!track.hasAudio;
+            track.artworkName = track.artworkName || null;
+            track.audioName = track.audioName || null;
+            track.artworkType = track.artworkType || null;
+            track.audioType = track.audioType || null;
+
+            return track;
+        }
+
+        async function hydrateMediaFromDB() {
+            for (const t of tracks) {
+                if (t.hasArtwork) {
+                    try {
+                        const blob = await idbGetBlob(artworkKey(t.id));
+                        if (blob) {
+                            if (t.artworkUrl) URL.revokeObjectURL(t.artworkUrl);
+                            t.artworkUrl = URL.createObjectURL(blob);
+                        } else {
+                            t.hasArtwork = false;
+                        }
+                    } catch (e) {
+                        console.warn('Failed to load artwork from DB', t.id, e);
+                    }
+                }
+
+                if (t.hasAudio) {
+                    try {
+                        const blob = await idbGetBlob(audioKey(t.id));
+                        if (blob) {
+                            if (t.audioUrl) URL.revokeObjectURL(t.audioUrl);
+                            t.audioUrl = URL.createObjectURL(blob);
+                        } else {
+                            t.hasAudio = false;
+                        }
+                    } catch (e) {
+                        console.warn('Failed to load audio from DB', t.id, e);
+                    }
+                }
+            }
+        }
+
+        async function migrateLegacyStorageIfNeeded() {
+            // If new meta already exists, nothing to do.
+            const meta = safeParseJSON(localStorage.getItem(META_KEY), null);
+            if (meta) return;
+
+            const legacy = safeParseJSON(localStorage.getItem(LEGACY_KEY), null);
+            if (!legacy) return;
+
+            // Apply legacy arrays first
+            applyMeta(legacy);
+
+            let migratedSomething = false;
+
+            // Convert any embedded base64 media into IndexedDB
+            for (const t of tracks) {
+                // Legacy artwork
+                if (typeof t.artworkData === 'string' && t.artworkData.startsWith('data:')) {
+                    try {
+                        const blob = await dataUrlToBlob(t.artworkData);
+                        await idbPutBlob(artworkKey(t.id), blob);
+                        t.hasArtwork = true;
+                        t.artworkType = blob.type || 'image/*';
+                        t.artworkName = t.artworkName || 'artwork';
+                        if (t.artworkUrl) URL.revokeObjectURL(t.artworkUrl);
+                        t.artworkUrl = URL.createObjectURL(blob);
+                        delete t.artworkData;
+                        migratedSomething = true;
+                    } catch (e) {
+                        console.warn('Legacy artwork migration failed', t.id, e);
+                    }
+                }
+
+                // Legacy audio
+                if (typeof t.previewData === 'string' && t.previewData.startsWith('data:')) {
+                    try {
+                        const blob = await dataUrlToBlob(t.previewData);
+                        await idbPutBlob(audioKey(t.id), blob);
+                        t.hasAudio = true;
+                        t.audioType = blob.type || 'audio/*';
+                        t.audioName = t.audioName || 'audio';
+                        if (t.audioUrl) URL.revokeObjectURL(t.audioUrl);
+                        t.audioUrl = URL.createObjectURL(blob);
+                        delete t.previewData;
+                        migratedSomething = true;
+                    } catch (e) {
+                        console.warn('Legacy audio migration failed', t.id, e);
+                    }
+                }
+            }
+
+            // Remove legacy big storage to free quota before saving new meta
+            try { localStorage.removeItem(LEGACY_KEY); } catch (e) {}
+
+            // Save new meta
+            const ok = persistMeta({ silent: true });
+            if (ok && migratedSomething) {
+                showNotification('Migrated legacy uploads to safer storage (IndexedDB).');
+            }
+        }
+
+        // ==========================================================
+        // RENDER
+        // ==========================================================
+        function getVisibleTracks() {
+            let list = [...tracks];
+
+            if (currentGenre !== 'all') {
+                list = list.filter(t => String(t.genre).toLowerCase() === currentGenre);
+            }
+
+            if (currentSearch) {
+                const q = currentSearch.toLowerCase();
+                list = list.filter(t =>
+                    String(t.title).toLowerCase().includes(q) ||
+                    String(t.genre).toLowerCase().includes(q)
+                );
+            }
+
+            return list;
+        }
+
+        function renderGenres() {
+            // Admin list
+            const listEl = document.getElementById('genresList');
+            listEl.innerHTML = genres.map(genre => `
+                <div class="flex justify-between items-center bg-dark/50 p-3 rounded-lg">
+                    <div class="flex items-center gap-2">
+                        <span class="text-white capitalize">${genre}</span>
+                        <button onclick="renameGenre('${genre}')" class="text-turquoise hover:text-white text-xs">Edit</button>
+                    </div>
+                    <button onclick="removeGenre('${genre}')" class="text-red-400 hover:text-red-300">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            `).join('');
+
+            // Filters
+            const filterEl = document.getElementById('genreFilters');
+            if (!filterEl) return;
+
+            filterEl.innerHTML = `
+                <button class="genre-btn hologram-btn px-5 py-2 rounded-full text-sm font-rajdhani ${currentGenre === 'all' ? 'bg-jamaica-gold/30' : ''}" data-genre="all">All</button>
+                ${genres.map(g => `
+                    <button class="genre-btn hologram-btn px-5 py-2 rounded-full text-sm font-rajdhani ${currentGenre === g ? 'bg-jamaica-gold/30' : ''}" data-genre="${g}">${g.charAt(0).toUpperCase() + g.slice(1)}</button>
+                `).join('')}
+            `;
+
+            filterEl.querySelectorAll('.genre-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentGenre = btn.dataset.genre;
+                    renderGenres();
+                    renderTracks();
+                });
+            });
+        }
+
+        function renderTracks() {
+            const grid = document.getElementById('tracksGrid');
+            const filtered = getVisibleTracks();
+
+            grid.innerHTML = filtered.map((track, idx) => {
+                const img = track.artworkUrl
+                    ? `<img src="${track.artworkUrl}" alt="${track.title} artwork" class="w-full h-full object-cover absolute inset-0" />`
+                    : '';
+
+                const icon = !track.artworkUrl
+                    ? `<div class="absolute inset-0 flex items-center justify-center">${icons[track.artwork] || icons['music-note']}</div>`
+                    : '';
+
+                return `
+                <div class="track-card parallax-card bg-darker/80 border border-jamaica-green/20 rounded-2xl overflow-hidden fade-in relative" style="animation-delay: ${idx * 0.06}s">
+                    <div class="relative">
+                        <div class="h-48 bg-gradient-to-br ${track.color} relative overflow-hidden">
+                            ${img}
+                            ${icon}
+                            <div class="absolute inset-0 bg-black/25"></div>
+
+                            <div class="equalizer absolute bottom-0 left-0 right-0">
+                                ${Array(12).fill().map((_, i) => `<div class="eq-bar" style="animation-delay: ${i * 0.08}s;"></div>`).join('')}
+                            </div>
+
+                            <button onclick="playTrack(${track.id})" class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center z-10">
+                                <div class="w-16 h-16 rounded-full bg-jamaica-gold/90 flex items-center justify-center text-dark hover:scale-110 transition-transform">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.665z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                            </button>
+                        </div>
+                        <span class="absolute top-3 right-3 bg-dark/80 px-3 py-1 rounded-full text-xs font-rajdhani text-turquoise uppercase z-10">
+                            ${track.genre}
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-orbitron text-lg text-white mb-1">${track.title}</h3>
+                        <p class="text-gray-500 text-sm font-rajdhani mb-3">${track.bpm} BPM • VibeCraft AI</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-orbitron text-2xl text-jamaica-gold">${formatPrice(track.price)}</span>
+                            <div class="flex gap-2">
+                                <button onclick="playTrack(${track.id})" class="hologram-btn px-4 py-2 rounded-lg text-sm font-rajdhani flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+                                    Preview
+                                </button>
+                                <button onclick="addToCart(${track.id})" class="hologram-btn px-4 py-2 rounded-lg text-sm font-rajdhani bg-jamaica-gold/20 border-jamaica-gold/50 flex items-center gap-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.5 1.5M7 13l1.5 1.5M9 3h6m-6 0h6m2 3v12a2 2 0 002 2h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2z"></path></svg>
+                                    Buy
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        function renderBundles() {
+            const grid = document.getElementById('bundlesGrid');
+
+            grid.innerHTML = bundles.map((bundle, idx) => `
+                <div class="track-card parallax-card bg-darker/80 border border-turquoise/20 rounded-2xl overflow-hidden fade-in" style="animation-delay: ${idx * 0.06}s">
+                    <div class="h-40 bg-gradient-to-br ${bundle.color} flex items-center justify-center relative">
+                        ${icons[bundle.artwork] || icons['disc']}
+                        <span class="absolute top-3 right-3 bg-jamaica-gold text-dark px-3 py-1 rounded-full text-xs font-bold">
+                            ${bundle.discount}
+                        </span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-orbitron text-lg text-white mb-2">${bundle.title}</h3>
+                        <p class="text-gray-500 text-sm font-rajdhani mb-3">${bundle.tracks.length} Premium Tracks</p>
+                        <div class="flex flex-wrap gap-1 mb-4">
+                            ${bundle.tracks.map(id => {
+                                const t = tracks.find(tr => tr.id === id);
+                                return t ? `<span class="text-xs bg-dark px-2 py-1 rounded text-turquoise">${t.title}</span>` : '';
+                            }).join('')}
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-orbitron text-2xl text-jamaica-gold">${formatPrice(bundle.price)}</span>
+                            <button onclick="addBundleToCart('${bundle.id}')" class="hologram-btn px-5 py-2 rounded-lg text-sm font-rajdhani bg-turquoise/20 border-turquoise/50 flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                                Get Bundle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderTrackEditors() {
+            const container = document.getElementById('trackEditors');
+
+            container.innerHTML = tracks.map((track) => {
+                const artworkPreview = track.artworkUrl
+                    ? `<img src="${track.artworkUrl}" alt="Artwork Preview" class="w-16 h-16 rounded object-cover" />`
+                    : `<div class="w-16 h-16 rounded bg-dark/40 flex items-center justify-center">${(icons[track.artwork] || icons['music-note']).replace('w-16 h-16', 'w-8 h-8')}</div>`;
+
+                const artworkInfo = track.hasArtwork ? (track.artworkName || 'Artwork uploaded') : 'No artwork uploaded';
+                const audioInfo = track.hasAudio ? (track.audioName || 'Audio uploaded') : 'No audio uploaded';
+
+                return `
+                <div class="track-editor">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-orbitron text-lg text-white">Track ${track.id}: ${track.title}</h3>
+                        <button onclick="removeTrack(${track.id})" class="text-red-400 hover:text-red-300 text-sm">Remove</button>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Artwork -->
+                        <div class="drop-zone h-32 rounded-lg flex items-center justify-center bg-darker/50 border-2 border-dashed border-jamaica-green/30 relative" data-track="${track.id}" data-type="artwork">
+                            <div class="drop-content text-center flex items-center gap-4">
+                                ${artworkPreview}
+                                <div class="text-left">
+                                    <p class="text-sm text-gray-300">Drop album artwork here</p>
+                                    <p class="text-xs text-gray-500">PNG/JPG (recommended under 1–2MB)</p>
+                                </div>
+                            </div>
+                            <input type="file" accept="image/*" onchange="handleFileUpload(event, ${track.id}, 'artwork')">
+                        </div>
+                        <div class="flex justify-between items-center text-xs text-gray-400">
+                            <span>${artworkInfo}</span>
+                            ${track.hasArtwork ? `<button onclick="clearArtwork(${track.id})" class="text-red-300 hover:text-red-200">Clear</button>` : `<span></span>`}
+                        </div>
+
+                        <!-- Audio -->
+                        <div class="drop-zone h-24 rounded-lg flex items-center justify-center bg-darker/50 border-2 border-dashed border-jamaica-gold/30 relative" data-track="${track.id}" data-type="audio">
+                            <div class="drop-content text-center">
+                                <p class="text-sm text-gray-300">Drop audio file here</p>
+                                <p class="text-xs text-gray-500">MP3/WAV (preview). Stored in IndexedDB.</p>
+                            </div>
+                            <input type="file" accept="audio/*" onchange="handleFileUpload(event, ${track.id}, 'audio')">
+                        </div>
+                        <div class="flex justify-between items-center text-xs text-gray-400">
+                            <span>${audioInfo}</span>
+                            ${track.hasAudio ? `<button onclick="clearAudio(${track.id})" class="text-red-300 hover:text-red-200">Clear</button>` : `<span></span>`}
+                        </div>
+
+                        <!-- Track Details -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Title</label>
+                                <input type="text" value="${escapeHtml(track.title)}" onchange="updateTrackField(${track.id}, 'title', this.value)"
+                                       class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Genre</label>
+                                <select onchange="updateTrackField(${track.id}, 'genre', this.value)"
+                                        class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                                    ${genres.map(g => `<option value="${g}" ${track.genre === g ? 'selected' : ''}>${g.charAt(0).toUpperCase() + g.slice(1)}</option>`).join('')}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">Price ($)</label>
+                                <input type="number" step="0.01" value="${Number(track.price).toFixed(2)}" onchange="updateTrackField(${track.id}, 'price', parseFloat(this.value))"
+                                       class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-2">BPM</label>
+                                <input type="number" value="${track.bpm}" onchange="updateTrackField(${track.id}, 'bpm', parseInt(this.value))"
+                                       class="w-full bg-darker/50 border border-jamaica-green/20 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-jamaica-gold">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        // ==========================================================
+        // PLAYER
+        // ==========================================================
+        function setPlayIcon(isPause) {
+            playIcon.innerHTML = isPause
+                ? '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6"></path></svg>'
+                : '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.665z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>';
+        }
+
+        function playTrack(id) {
+            const track = tracks.find(t => t.id === id);
+            if (!track) return;
+
+            currentTrack = track;
+            const audioSrc = track.audioUrl || track.preview;
+
+            if (!audioSrc) {
+                showNotification('No preview audio available for this track.', 'error');
+                return;
+            }
+
+            mainPlayer.src = audioSrc;
+            mainPlayer.play();
+            isPlaying = true;
+
+            document.getElementById('playerTitle').textContent = track.title;
+
+            if (track.artworkUrl) {
+                document.getElementById('playerArt').innerHTML = `<img src="${track.artworkUrl}" alt="${track.title}" class="w-12 h-12 rounded-lg object-cover" />`;
+            } else {
+                document.getElementById('playerArt').innerHTML = (icons[track.artwork] || icons['music-note']).replace('w-16 h-16', 'w-6 h-6');
+            }
+
+            setPlayIcon(true);
+            floatingPlayer.classList.remove('hidden');
+
+            analyticsEvent('preview_track', { track_title: track.title });
+        }
+
+        playPauseBtn.addEventListener('click', () => {
+            if (!currentTrack) {
+                showNotification('Select a track to play.', 'error');
+                return;
+            }
+
+            if (isPlaying) {
+                mainPlayer.pause();
+                isPlaying = false;
+                setPlayIcon(false);
+            } else {
+                mainPlayer.play();
+                isPlaying = true;
+                setPlayIcon(true);
+            }
+        });
+
+        mainPlayer.addEventListener('ended', () => {
+            isPlaying = false;
+            setPlayIcon(false);
+        });
+
+        volumeSlider.addEventListener('input', (e) => {
+            mainPlayer.volume = Number(e.target.value) / 100;
+        });
+
+        document.getElementById('closePlayer').addEventListener('click', () => {
+            mainPlayer.pause();
+            floatingPlayer.classList.add('hidden');
+            isPlaying = false;
+            setPlayIcon(false);
+        });
+
+        // ==========================================================
+        // CART
+        // ==========================================================
+        function saveCart() {
+            try {
+                localStorage.setItem(CART_KEY, JSON.stringify(cart));
+            } catch (e) {
+                console.warn('Cart save failed', e);
+            }
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+
+        function addToCart(id) {
+            const track = tracks.find(t => t.id === id);
+            if (!track) return;
+
+            if (!cart.find(item => item.id === id && item.type === 'track')) {
+                cart.push({ id, type: 'track', title: track.title, price: track.price });
+                saveCart();
+                showNotification(`${track.title} added to cart!`);
+                analyticsEvent('add_to_cart', { track_title: track.title, price: track.price });
+            } else {
+                showNotification('Track already in cart!');
+            }
+        }
+
+        function addBundleToCart(bundleId) {
+            const bundle = bundles.find(b => b.id === bundleId);
+            if (!bundle) return;
+
+            if (!cart.find(item => item.id === bundleId && item.type === 'bundle')) {
+                cart.push({ id: bundleId, type: 'bundle', title: bundle.title, price: bundle.price });
+                saveCart();
+                showNotification(`${bundle.title} added to cart!`);
+                analyticsEvent('add_bundle_to_cart', { bundle_title: bundle.title, price: bundle.price });
+            } else {
+                showNotification('Bundle already in cart!');
+            }
+        }
+
+        function removeFromCart(id, type) {
+            cart = cart.filter(item => !(String(item.id) === String(id) && item.type === type));
+            saveCart();
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartItems = document.getElementById('cartItems');
+            const total = cart.reduce((sum, item) => sum + Number(item.price || 0), 0);
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-gray-500 text-center py-8">Your cart is empty</p>';
+            } else {
+                cartItems.innerHTML = cart.map(item => `
+                    <div class="flex justify-between items-center bg-dark/50 p-4 rounded-xl">
+                        <div>
+                            <p class="font-rajdhani text-white">${escapeHtml(item.title)}</p>
+                            <p class="text-xs text-gray-500 uppercase">${item.type}</p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-jamaica-gold font-orbitron">${formatPrice(item.price)}</span>
+                            <button onclick="removeFromCart('${item.id}', '${item.type}')" class="text-red-500 hover:text-red-400">✕</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            document.getElementById('cartTotal').textContent = formatPrice(total);
+
+            const itemsList = cart.map(i => `${i.title} (${formatPrice(i.price)})`).join(', ');
+            const whatsappMsg = encodeURIComponent(`Hi! I'd like to purchase: ${itemsList}. Total: ${formatPrice(total)}`);
+            document.getElementById('whatsappCheckout').href = `https://wa.me/1234567890?text=${whatsappMsg}`;
+            document.getElementById('emailCheckout').href = `mailto:orders@VibeCraftai.music?subject=Order Request&body=${encodeURIComponent(`I'd like to purchase:\n${itemsList}\n\nTotal: ${formatPrice(total)}`)}`;
+        }
+
+        document.getElementById('cartBtn').addEventListener('click', () => {
+            renderCart();
+            document.getElementById('cartModal').classList.remove('hidden');
+        });
+
+        document.getElementById('closeCartModal').addEventListener('click', () => {
+            document.getElementById('cartModal').classList.add('hidden');
+        });
+
+        // ==========================================================
+        // SEARCH
+        // ==========================================================
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            currentSearch = e.target.value.trim();
+            renderTracks();
+        });
+
+        // ==========================================================
+        // ADMIN PANEL + CRUD
+        // ==========================================================
+        function toggleAdminPanel() {
+            const panel = document.getElementById('adminPanel');
+            panel.classList.toggle('open');
+
+            if (panel.classList.contains('open')) {
+                renderGenres();
+                renderTrackEditors();
+                setupDragAndDrop();
+            }
+        }
+
+        function updateTrackField(trackId, field, value) {
+            const track = tracks.find(t => t.id === trackId);
+            if (!track) return;
+
+            if (field === 'genre') {
+                value = String(value || '').toLowerCase();
+                if (!genres.includes(value)) {
+                    value = genres[0] || 'reggae';
+                }
+            }
+
+            track[field] = value;
+
+            // Always persist small metadata
+            persistMeta({ silent: true });
+
+            // Refresh UI where needed
+            if (['title', 'genre', 'price', 'bpm'].includes(field)) {
+                renderTracks();
+                renderBundles();
+                if (field === 'genre') renderGenres();
+            }
+        }
+
+        async function handleFileUpload(event, trackId, type) {
+            const file = event?.target?.files?.[0];
+            if (!file) return;
+
+            const track = tracks.find(t => t.id === trackId);
+            if (!track) return;
+
+            // Validate
+            if (type === 'artwork' && !file.type.startsWith('image/')) {
+                showNotification('Please select an image file for artwork', 'error');
+                return;
+            }
+            if (type === 'audio' && !file.type.startsWith('audio/')) {
+                showNotification('Please select an audio file', 'error');
+                return;
+            }
+
+            // Recommended max sizes for a browser-stored editor
+            const maxSize = type === 'artwork' ? 3 * 1024 * 1024 : 20 * 1024 * 1024;
+            if (file.size > maxSize) {
+                showNotification(`File too large for in-browser saving. Try under ${type === 'artwork' ? '3MB' : '20MB'}.`, 'error');
+                return;
+            }
+
+            try {
+                if (type === 'artwork') {
+                    await idbPutBlob(artworkKey(trackId), file);
+                    track.hasArtwork = true;
+                    track.artworkName = file.name;
+                    track.artworkType = file.type;
+                    if (track.artworkUrl) URL.revokeObjectURL(track.artworkUrl);
+                    track.artworkUrl = URL.createObjectURL(file);
+                } else {
+                    await idbPutBlob(audioKey(trackId), file);
+                    track.hasAudio = true;
+                    track.audioName = file.name;
+                    track.audioType = file.type;
+                    if (track.audioUrl) URL.revokeObjectURL(track.audioUrl);
+                    track.audioUrl = URL.createObjectURL(file);
+                }
+
+                persistMeta({ silent: true });
+                renderTracks();
+                renderBundles();
+                renderTrackEditors();
+                setupDragAndDrop();
+
+                showNotification(`${type === 'artwork' ? 'Artwork' : 'Audio'} saved!`);
+            } catch (e) {
+                console.error('Upload failed:', e);
+                showNotification('Upload failed. Storage blocked or unavailable.', 'error');
+            }
+        }
+
+        function setupDragAndDrop() {
+            const dropZones = document.querySelectorAll('.drop-zone');
+
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    zone.classList.add('drag-over');
+                });
+
+                zone.addEventListener('dragleave', (e) => {
+                    e.preventDefault();
+                    zone.classList.remove('drag-over');
+                });
+
+                zone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    zone.classList.remove('drag-over');
+
+                    const trackId = parseInt(zone.dataset.track, 10);
+                    const type = zone.dataset.type;
+                    const files = e.dataTransfer.files;
+
+                    if (files && files.length > 0) {
+                        handleFileUpload({ target: { files } }, trackId, type);
+                    }
+                });
+            });
+        }
+
+        async function clearArtwork(trackId) {
+            const track = tracks.find(t => t.id === trackId);
+            if (!track) return;
+
+            if (!confirm('Remove artwork for this track?')) return;
+
+            try {
+                await idbDelete(artworkKey(trackId));
+            } catch (e) {
+                // ignore
+            }
+
+            if (track.artworkUrl) URL.revokeObjectURL(track.artworkUrl);
+            track.artworkUrl = null;
+            track.hasArtwork = false;
+            track.artworkName = null;
+            track.artworkType = null;
+
+            persistMeta({ silent: true });
+            renderTracks();
+            renderTrackEditors();
+            setupDragAndDrop();
+        }
+
+        async function clearAudio(trackId) {
+            const track = tracks.find(t => t.id === trackId);
+            if (!track) return;
+
+            if (!confirm('Remove uploaded audio for this track?')) return;
+
+            try {
+                await idbDelete(audioKey(trackId));
+            } catch (e) {
+                // ignore
+            }
+
+            if (track.audioUrl) URL.revokeObjectURL(track.audioUrl);
+            track.audioUrl = null;
+            track.hasAudio = false;
+            track.audioName = null;
+            track.audioType = null;
+
+            persistMeta({ silent: true });
+
+            // If currently playing this track, fall back to URL preview
+            if (currentTrack && currentTrack.id === trackId) {
+                mainPlayer.pause();
+                isPlaying = false;
+                setPlayIcon(false);
+            }
+
+            renderTrackEditors();
+            setupDragAndDrop();
+        }
+
+        async function removeTrack(trackId) {
+            if (!confirm('Are you sure you want to remove this track?')) return;
+
+            const idx = tracks.findIndex(t => t.id === trackId);
+            if (idx === -1) return;
+
+            // Remove media
+            try { await idbDelete(artworkKey(trackId)); } catch {}
+            try { await idbDelete(audioKey(trackId)); } catch {}
+
+            const t = tracks[idx];
+            if (t?.artworkUrl) URL.revokeObjectURL(t.artworkUrl);
+            if (t?.audioUrl) URL.revokeObjectURL(t.audioUrl);
+
+            tracks.splice(idx, 1);
+
+            persistMeta({ silent: true });
+            renderTracks();
+            renderBundles();
+            renderTrackEditors();
+            setupDragAndDrop();
+
+            showNotification('Track removed');
+        }
+
+        function addNewTrack() {
+            const newId = Math.max(...tracks.map(t => Number(t.id) || 0), 0) + 1;
+            const newTrack = normalizeTrack({
+                id: newId,
+                title: 'New Track',
+                genre: genres[0] || 'reggae',
+                price: 4.99,
+                bpm: 80,
+                preview: '',
+                artwork: 'music-note',
+                color: 'from-jamaica-green to-emerald-800',
+                hasArtwork: false,
+                hasAudio: false
+            });
+
+            tracks.push(newTrack);
+
+            persistMeta({ silent: true });
+            renderTracks();
+            renderTrackEditors();
+            setupDragAndDrop();
+
+            showNotification('New track added! Upload artwork/audio + edit details.');
+        }
+
+        function addGenre() {
+            const input = document.getElementById('newGenreInput');
+            const genre = String(input.value || '').trim().toLowerCase();
+            if (!genre) return;
+
+            if (genres.includes(genre)) {
+                showNotification('Genre already exists', 'error');
+                return;
+            }
+
+            genres.push(genre);
+            input.value = '';
+
+            persistMeta({ silent: true });
+            renderGenres();
+            renderTrackEditors();
+            showNotification(`Genre "${genre}" added`);
+        }
+
+        function renameGenre(oldName) {
+            const next = prompt('Rename genre:', oldName);
+            if (next === null) return;
+
+            const newName = String(next).trim().toLowerCase();
+            if (!newName) return;
+
+            if (genres.includes(newName)) {
+                showNotification('That genre already exists', 'error');
+                return;
+            }
+
+            genres = genres.map(g => g === oldName ? newName : g);
+            tracks.forEach(t => {
+                if (t.genre === oldName) t.genre = newName;
+            });
+
+            if (currentGenre === oldName) currentGenre = newName;
+
+            persistMeta({ silent: true });
+            renderGenres();
+            renderTracks();
+            renderTrackEditors();
+            showNotification(`Renamed "${oldName}" → "${newName}"`);
+        }
+
+        function removeGenre(genre) {
+            if (!confirm(`Remove genre "${genre}"? Tracks using it will be moved to "${genres[0]}".`)) return;
+
+            const remaining = genres.filter(g => g !== genre);
+            if (remaining.length === 0) {
+                showNotification('You must have at least one genre', 'error');
+                return;
+            }
+
+            genres = remaining;
+            const fallback = genres[0];
+
+            tracks.forEach(t => {
+                if (t.genre === genre) t.genre = fallback;
+            });
+
+            if (currentGenre === genre) currentGenre = 'all';
+
+            persistMeta({ silent: true });
+            renderGenres();
+            renderTracks();
+            renderTrackEditors();
+            showNotification(`Genre "${genre}" removed`);
+        }
+
+        function saveAllChanges() {
+            // Save meta and close panel if successful
+            const ok = persistMeta({ silent: false });
+            if (!ok) return;
+
+            renderGenres();
+            renderTracks();
+            renderBundles();
+
+            showNotification('All changes saved successfully!');
+            analyticsEvent('save_content', { track_count: tracks.length });
+
+            // Auto-close the admin panel
+            const panel = document.getElementById('adminPanel');
+            panel.classList.remove('open');
+            showNotification('Admin panel closed. Changes saved!');
+        }
+
+        // Admin Login
+        function showAdminLogin() {
+            const password = localStorage.getItem(ADMIN_PASSWORD_KEY);
+            if (!password) {
+                // First time setup
+                const newPassword = prompt('Set admin password:');
+                if (newPassword) {
+                    localStorage.setItem(ADMIN_PASSWORD_KEY, newPassword);
+                    toggleAdminPanel();
+                }
+            } else {
+                // Login
+                const input = prompt('Enter admin password:');
+                if (input === password) {
+                    toggleAdminPanel();
+                } else if (input !== null) {
+                    alert('Incorrect password!');
+                }
+            }
+        }
+
+        // Page Content Management
+        let pageContent = safeParseJSON(localStorage.getItem('pageContent'), {
+            heroMainTitle: 'VibeCraft',
+            heroSubtitle: 'AI MUSIC',
+            heroDescription: 'Premium AI-Generated Beats • Reggae • Dancehall • Afrobeats • Electronic',
+            aboutTitle: 'ABOUT VibeCraft AI',
+            aboutSubtitle: 'The Future of Caribbean Sound',
+            aboutDesc1: 'VibeCraft AI Music Store brings you the cutting edge of AI-generated Caribbean music. From deep Reggae roots to modern Dancehall vibes, our tracks are crafted using advanced neural networks trained on decades of Caribbean musical heritage.',
+            aboutDesc2: 'Each track is royalty-free and ready for your next project — films, games, podcasts, or personal enjoyment. Experience the future of island sound.',
+            whatsappNumber: '1234567890',
+            contactEmail: 'contact@VibeCraftai.music',
+            footerCopyright: '© 2024 VibeCraft AI Music Store — Jamaica Edition. All rights reserved.',
+            termsText: 'Terms',
+            privacyText: 'Privacy',
+            licensingText: 'Licensing'
+        });
+
+        function updatePageContent(key, value) {
+            pageContent[key] = value;
+            localStorage.setItem('pageContent', JSON.stringify(pageContent));
+            applyPageContent();
+            showNotification('Page content updated!');
+        }
+
+        function applyPageContent() {
+            // Hero
+            document.querySelector('.glitch').textContent = pageContent.heroMainTitle;
+            document.querySelector('.neon-text').textContent = pageContent.heroSubtitle;
+            document.querySelector('#home p').textContent = pageContent.heroDescription;
+
+            // About
+            document.querySelector('#about h2').innerHTML = pageContent.aboutTitle.replace('VibeCraft AI', '<span class="text-jamaica-green">ABOUT</span> <span class="text-jamaica-gold">VibeCraft AI</span>');
+            document.querySelector('#about h3').textContent = pageContent.aboutSubtitle;
+            document.querySelector('#about p:nth-of-type(1)').textContent = pageContent.aboutDesc1;
+            document.querySelector('#about p:nth-of-type(2)').textContent = pageContent.aboutDesc2;
+
+            // Contact Links
+            document.querySelector('a[href^="https://wa.me"]').href = `https://wa.me/${pageContent.whatsappNumber}`;
+            document.querySelector('a[href^="mailto:"]').href = `mailto:${pageContent.contactEmail}`;
+
+            // Footer
+            document.querySelector('footer p').textContent = pageContent.footerCopyright;
+            document.querySelector('footer a:nth-of-type(1)').textContent = pageContent.termsText;
+            document.querySelector('footer a:nth-of-type(2)').textContent = pageContent.privacyText;
+            document.querySelector('footer a:nth-of-type(3)').textContent = pageContent.licensingText;
+        }
+
+        // Keyboard shortcuts
+        function handleKeydown(e) {
+            if (e.ctrlKey || e.metaKey) {
+                switch (e.key.toLowerCase()) {
+                    case 's':
+                        e.preventDefault();
+                        saveAllChanges();
+                        break;
+                    case 'n':
+                        e.preventDefault();
+                        addNewTrack();
+                        break;
+                }
+            }
+        }
+
+        // ==========================================================
+        // BACKGROUND ANIMATIONS
+        // ==========================================================
+        function createParticles() {
+            const container = document.getElementById('particles');
+            container.innerHTML = '';
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'waveform-particle';
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.height = `${20 + Math.random() * 60}px`;
+                particle.style.animationDelay = `${Math.random() * 8}s`;
+                particle.style.animationDuration = `${6 + Math.random() * 4}s`;
+                container.appendChild(particle);
+            }
+        }
+
+        function createCircuits() {
+            const container = document.getElementById('circuits');
+            container.innerHTML = '';
+            for (let i = 0; i < 8; i++) {
+                const line = document.createElement('div');
+                line.className = 'circuit-line';
+                line.style.top = `${10 + Math.random() * 80}%`;
+                line.style.width = `${100 + Math.random() * 200}px`;
+                line.style.animationDelay = `${Math.random() * 4}s`;
+                line.style.animationDuration = `${3 + Math.random() * 2}s`;
+                container.appendChild(line);
+            }
+        }
+
+        // 3D Parallax on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.parallax-card');
+            const x = (e.clientX / window.innerWidth - 0.5) * 10;
+            const y = (e.clientY / window.innerHeight - 0.5) * 10;
+
+            cards.forEach(card => {
+                if (!card.matches(':hover')) {
+                    card.style.transform = `perspective(1000px) rotateX(${-y * 0.5}deg) rotateY(${x * 0.5}deg)`;
+                }
+            });
+        });
+
+        // Smooth scroll
+        function scrollTo(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // ==========================================================
+        // INIT
+        // ==========================================================
+        document.addEventListener('DOMContentLoaded', () => {
+            (async () => {
+                // Initialize IndexedDB
+                try {
+                    await openFileDB();
+                } catch (e) {
+                    console.warn('IndexedDB initialization failed:', e);
+                }
+
+                // Load saved meta (new) or migrate legacy
+                await migrateLegacyStorageIfNeeded();
+
+                const meta = safeParseJSON(localStorage.getItem(META_KEY), null);
+                if (meta) {
+                    applyMeta(meta);
+                } else {
+                    // first run, save defaults
+                    persistMeta({ silent: true });
+                }
+
+                // Hydrate artwork/audio from IndexedDB into objectURLs
+                try {
+                    await hydrateMediaFromDB();
+                } catch (e) {
+                    console.warn('Media hydration skipped:', e);
+                }
+
+                // Load and apply page content
+                applyPageContent();
+
+                // Render
+                renderGenres();
+                renderTracks();
+                renderBundles();
+                updateCartCount();
+                createParticles();
+                createCircuits();
+
+                // Volume
+                mainPlayer.volume = 0.8;
+
+                // Keyboard shortcuts
+                document.addEventListener('keydown', handleKeydown);
+
+                analyticsEvent('page_view', { page_title: 'VibeCraft AI Music Store - Jamaica Edition' });
+            })();
+        });
+    </script>
+</body>
+</html>
